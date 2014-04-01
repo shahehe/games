@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface PGLearnWord : CCLayer {
-    
-}
+@interface PGLearnWord : CCLayer
+
++ (CCScene *) scene;
 
 @end

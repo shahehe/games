@@ -12,6 +12,8 @@
 
 #import "UtilsMacro.h"
 
+#import "General/Games/PGLearnWord.h"
+
 #pragma mark - IntroLayer
 
 // HelloWorldLayer implementation
@@ -52,5 +54,7 @@
 -(void) onEnter
 {
 	[super onEnter];
+    
+    [[CCDirector sharedDirector] replaceScene:[PGLearnWord scene]];
 }
 @end

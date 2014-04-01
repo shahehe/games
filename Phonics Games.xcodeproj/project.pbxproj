@@ -13,6 +13,9 @@
 		84DBB53F18EAD19A00E7F8C7 /* Arial-Black-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DBB53B18EAD19A00E7F8C7 /* Arial-Black-ipadhd.png */; };
 		84DBB54218EAD23600E7F8C7 /* PGManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DBB54118EAD23600E7F8C7 /* PGManager.m */; };
 		84DBB54518EAD2DF00E7F8C7 /* PGLearnWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DBB54418EAD2DF00E7F8C7 /* PGLearnWord.m */; };
+		84DBB54818EADBAC00E7F8C7 /* LetterBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DBB54718EADBAC00E7F8C7 /* LetterBlock.m */; };
+		84DBB54A18EAF33600E7F8C7 /* blockTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DBB54918EAF33600E7F8C7 /* blockTexture.png */; };
+		84DBB54D18EAF6B900E7F8C7 /* CCNodeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DBB54C18EAF6B900E7F8C7 /* CCNodeHelper.m */; };
 		84F030FE18E9A6A90097553C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F030FD18E9A6A90097553C /* QuartzCore.framework */; };
 		84F0310018E9A6A90097553C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F030FF18E9A6A90097553C /* OpenGLES.framework */; };
 		84F0310218E9A6A90097553C /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F0310118E9A6A90097553C /* OpenAL.framework */; };
@@ -178,6 +181,11 @@
 		84DBB54118EAD23600E7F8C7 /* PGManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGManager.m; sourceTree = "<group>"; };
 		84DBB54318EAD2DF00E7F8C7 /* PGLearnWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGLearnWord.h; sourceTree = "<group>"; };
 		84DBB54418EAD2DF00E7F8C7 /* PGLearnWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGLearnWord.m; sourceTree = "<group>"; };
+		84DBB54618EADBAC00E7F8C7 /* LetterBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LetterBlock.h; sourceTree = "<group>"; };
+		84DBB54718EADBAC00E7F8C7 /* LetterBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LetterBlock.m; sourceTree = "<group>"; };
+		84DBB54918EAF33600E7F8C7 /* blockTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blockTexture.png; sourceTree = "<group>"; };
+		84DBB54B18EAF6B900E7F8C7 /* CCNodeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCNodeHelper.h; sourceTree = "<group>"; };
+		84DBB54C18EAF6B900E7F8C7 /* CCNodeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCNodeHelper.m; sourceTree = "<group>"; };
 		84F030FA18E9A6A90097553C /* Phonics Games.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Phonics Games.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F030FD18E9A6A90097553C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		84F030FF18E9A6A90097553C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -598,6 +606,7 @@
 		84F0311218E9A6A90097553C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				84DBB54918EAF33600E7F8C7 /* blockTexture.png */,
 				84DBB53718EAD19A00E7F8C7 /* fonts */,
 				84F0312718E9A6A90097553C /* Info.plist */,
 				84F0312818E9A6A90097553C /* iTunesArtwork */,
@@ -1075,6 +1084,8 @@
 		84F0331018E9B5F60097553C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				84DBB54B18EAF6B900E7F8C7 /* CCNodeHelper.h */,
+				84DBB54C18EAF6B900E7F8C7 /* CCNodeHelper.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1111,6 +1122,8 @@
 		84F0331418E9B6D60097553C /* Element */ = {
 			isa = PBXGroup;
 			children = (
+				84DBB54618EADBAC00E7F8C7 /* LetterBlock.h */,
+				84DBB54718EADBAC00E7F8C7 /* LetterBlock.m */,
 			);
 			path = Element;
 			sourceTree = "<group>";
@@ -1189,6 +1202,7 @@
 				84F0312918E9A6A90097553C /* iTunesArtwork in Resources */,
 				84DBB53E18EAD19A00E7F8C7 /* Arial-Black-ipadhd.fnt in Resources */,
 				84F0330F18E9B44D0097553C /* Images.xcassets in Resources */,
+				84DBB54A18EAF33600E7F8C7 /* blockTexture.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1248,6 +1262,7 @@
 				84F0313118E9A6A90097553C /* CCActionCamera.m in Sources */,
 				84F0326318E9A6AA0097553C /* CDXPropertyModifierAction.m in Sources */,
 				84F0323318E9A6AA0097553C /* CCArray.m in Sources */,
+				84DBB54818EADBAC00E7F8C7 /* LetterBlock.m in Sources */,
 				84F0329018E9A6AA0097553C /* plane.c in Sources */,
 				84F0323C18E9A6AA0097553C /* CCProfiling.m in Sources */,
 				84F031D318E9A6AA0097553C /* CCShaderCache.m in Sources */,
@@ -1331,6 +1346,7 @@
 				84F0321118E9A6AA0097553C /* CCDirectorIOS.m in Sources */,
 				84F0319318E9A6A90097553C /* CCMenu.m in Sources */,
 				84F0329C18E9A6AA0097553C /* vec4.c in Sources */,
+				84DBB54D18EAF6B900E7F8C7 /* CCNodeHelper.m in Sources */,
 				84F0315E18E9A6A90097553C /* CCCamera.m in Sources */,
 				84F0315818E9A6A90097553C /* CCAnimationCache.m in Sources */,
 				84F032E918E9A6AB0097553C /* cpSpace.c in Sources */,
