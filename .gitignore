@@ -1,7 +1,6 @@
-# Created by http://www.gitignore.io
-
-### Xcode ###
-build/
+# Xcode
+.DS_Store
+*/build/*
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -10,23 +9,13 @@ build/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-xcuserdata/
-*.xccheckout
+xcuserdata
 profile
 *.moved-aside
-DerivedData/
+DerivedData
+.idea/
 *.hmap
-*.ipa
+*.xccheckout
 
-
-
-### Objective-C ###
-# CocoaPods
-#
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control?
-#
-# Pods/
-
-
+#CocoaPods
+Pods
