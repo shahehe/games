@@ -94,17 +94,10 @@ static char* fontFile = "Arial-Black.fnt";
     CGFloat height = self.contentSize.height;
     CGFloat mass = width * height;
     
-    int num = 4;
-    cpVect verts[] = {
-        cpv(-width/2, -height/2),
-        cpv(-width/2, height/2),
-        cpv(width/2, height/2),
-        cpv(width/2, height/2)
-    };
-    self.CPBody = cpBodyNew(mass, cpMomentForPoly(1.0f, num, verts, cpvzero));
+    self.CPBody = cpBodyNew(mass, cpMomentForBox(mass, width, height));
     cpBodySetUserData(self.CPBody, self);
     
-    _shape = cpPolyShapeNew(self.CPBody, num, verts, cpvzero);
+    _shape = cpBoxShapeNew(self.CPBody, width, height);
     cpShapeSetElasticity(_shape, 0.5f );
 	cpShapeSetFriction(_shape, 0.5f );
     cpShapeSetUserData(_shape, self);
