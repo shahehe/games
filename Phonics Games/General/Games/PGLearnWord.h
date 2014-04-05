@@ -9,8 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface PGLearnWord : CCLayer
+#import "SimpleAudioEngine.h"
 
-+ (CCScene *) scene;
+@interface PGLearnWord : CCLayer<CDLongAudioSourceDelegate>
+
+@property (nonatomic,copy,readonly) NSString *gameName;
+@property (nonatomic,retain) NSArray *words;
+@property (nonatomic,copy,readonly) NSString *currentWord;
+
++ (CCScene *) gameWithWords:(NSArray*)words;
+- (id) initWithWords:(NSArray*)words;
 
 @end

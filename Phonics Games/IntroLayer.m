@@ -55,6 +55,7 @@
 {
 	[super onEnter];
     
-    [[CCDirector sharedDirector] replaceScene:[PGLearnWord scene]];
+    NSArray *words = @[@"CAT",@"MAT"];
+    [[CCDirector sharedDirector] replaceScene:[PGLearnWord gameWithWords:words]];
 }
 @end
