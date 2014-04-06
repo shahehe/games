@@ -12,6 +12,8 @@
 #import "PGLearnWord.h"
 #import "PGSearchWord.h"
 
+#import "PGStageMenu.h"
+
 @implementation PGGameListMenu
 
 + (CCScene *) menuWithLetter:(char)letter
@@ -40,31 +42,34 @@
     CCMenuItemFont *learnWord = [CCMenuItemFont itemWithString:@"Learn Word" block:^(id sender) {
         [[CCDirector sharedDirector] replaceScene:[PGLearnWord gameWithWords:w]];
     }];
+    learnWord.color = ccWHITE;
     
     CCMenuItemFont *searchWord = [CCMenuItemFont itemWithString:@"Search Word" block:^(id sender) {
         [[CCDirector sharedDirector] replaceScene:[PGSearchWord gameWithWords:w panelSize:CGSizeMake(630, 720) gridSize:CGSizeMake(90, 90)]];
     }];
+    searchWord.color = ccWHITE;
     
     CCMenuItemFont *cardMatch = [CCMenuItemFont itemWithString:@"Card Match" block:^(id sender) {
         
     }];
     cardMatch.isEnabled = NO;
+    cardMatch.color = ccWHITE;
     
     CCMenuItemFont *bubble = [CCMenuItemFont itemWithString:@"Bubble" block:^(id sender) {
         
     }];
+    bubble.color = ccWHITE;
     bubble.isEnabled = NO;
     
-    CCMenu *menu = [CCMenu menuWithItems:learnWord,searchWord,cardMatch,bubble, nil];
+    CCMenuItemFont *back = [CCMenuItemFont itemWithString:@"BACK" block:^(id sender) {
+        [[CCDirector sharedDirector] replaceScene:[PGStageMenu stageMenu]];
+    }];
+    back.color = ccYELLOW;
+    
+    CCMenu *menu = [CCMenu menuWithItems:learnWord,searchWord,cardMatch,bubble,back, nil];
     [menu alignItemsVerticallyWithPadding:20];
     menu.position = CMP(0.5);
     [self addChild:menu];
-    
-    CCMenuItem *_item;
-    CCARRAY_FOREACH(menu.children, _item)
-    {
-        _item.color = ccWHITE;
-    }
     
     return self;
 }
