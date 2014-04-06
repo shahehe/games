@@ -11,6 +11,6 @@
 @protocol PGGameStateDelegate <NSObject>
 @optional
 
-- (void) phonicsGameHasStarted:(id)sender;
+- (void) phonicsGameStart:(id)sender;
 
 @end

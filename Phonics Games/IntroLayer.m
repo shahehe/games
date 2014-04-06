@@ -13,6 +13,7 @@
 #import "UtilsMacro.h"
 
 #import "General/Games/PGLearnWord.h"
+#import "PGSearchWord.h"
 
 #pragma mark - IntroLayer
 
@@ -56,6 +57,7 @@
 	[super onEnter];
     
     NSArray *words = @[@"CAT",@"MAT"];
-    [[CCDirector sharedDirector] replaceScene:[PGLearnWord gameWithWords:words]];
+    CCScene *scene = [PGSearchWord gameWithWords:nil panelSize:CGSizeMake(630, 720) gridSize:CGSizeMake(90, 90)];
+    [[CCDirector sharedDirector] replaceScene:scene];
 }
 @end
