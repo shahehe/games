@@ -103,8 +103,8 @@
     wordResults = [[NSMutableDictionary alloc] init];
     wordHints = [[NSMutableDictionary alloc] init];
     
-    NSArray *w = @[@"CAT",@"MAT",@"ADD",@"BAG",@"BAT",@"DAM"];
-    [self prepareWordPanelWithWords:w];
+    
+    [self prepareWordPanelWithWords:words];
     
     choosedString = [[NSMutableString alloc] initWithString:@""];
     

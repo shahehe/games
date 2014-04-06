@@ -14,6 +14,7 @@
 
 #import "General/Games/PGLearnWord.h"
 #import "PGSearchWord.h"
+#import "PGStageMenu.h"
 
 #pragma mark - IntroLayer
 
@@ -44,9 +45,6 @@
         CCLabelTTF *welcome = [CCLabelTTF labelWithString:@"Phonics Games" fontDefinition:font];
 		welcome.position = CMP(0.5);
         [self addChild:welcome];
-        
-        SLLogString(@"hello world");
-        SLLogPoint(SCREEN_SIZE_P);
 	}
 	
 	return self;
@@ -56,8 +54,8 @@
 {
 	[super onEnter];
     
-    NSArray *words = @[@"CAT",@"MAT"];
-    CCScene *scene = [PGSearchWord gameWithWords:nil panelSize:CGSizeMake(630, 720) gridSize:CGSizeMake(90, 90)];
-    [[CCDirector sharedDirector] replaceScene:scene];
+//    NSArray *words = @[@"CAT",@"MAT"];
+//    CCScene *scene = [PGSearchWord gameWithWords:nil panelSize:CGSizeMake(630, 720) gridSize:CGSizeMake(90, 90)];
+    [[CCDirector sharedDirector] replaceScene:[PGStageMenu stageMenu]];
 }
 @end
