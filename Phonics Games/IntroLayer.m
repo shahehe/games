@@ -54,8 +54,6 @@
 {
 	[super onEnter];
     
-//    NSArray *words = @[@"CAT",@"MAT"];
-//    CCScene *scene = [PGSearchWord gameWithWords:nil panelSize:CGSizeMake(630, 720) gridSize:CGSizeMake(90, 90)];
     [[CCDirector sharedDirector] replaceScene:[PGStageMenu stageMenu]];
 }
 @end
