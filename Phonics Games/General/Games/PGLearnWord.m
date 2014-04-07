@@ -214,7 +214,7 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
 - (NSString *) currentWord
 {
     if (_currentIndex < _words.count)
-        return [_words objectAtIndex:_currentIndex];
+        return [[_words objectAtIndex:_currentIndex] uppercaseString];
     
     return nil;
 }

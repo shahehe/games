@@ -23,6 +23,53 @@
 		84B5636E18F1B1A400A9B99B /* menu_letter-ipad.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B5636418F1B1A400A9B99B /* menu_letter-ipad.plist */; };
 		84B5636F18F1B1A400A9B99B /* menu_farm_bg.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 84B5636518F1B1A400A9B99B /* menu_farm_bg.pvr.ccz */; };
 		84B5637318F1CFC100A9B99B /* PGGameListMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B5637218F1CFC100A9B99B /* PGGameListMenu.m */; };
+		84B8455018F319CE00A9DA12 /* CardMatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B8454318F319CE00A9DA12 /* CardMatching.m */; };
+		84B8455118F319CE00A9DA12 /* CardMatchingGameDoneLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B8454518F319CE00A9DA12 /* CardMatchingGameDoneLayer.m */; };
+		84B8455218F319CE00A9DA12 /* CardMatchingGameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B8454718F319CE00A9DA12 /* CardMatchingGameLayer.m */; };
+		84B8455318F319CE00A9DA12 /* CardMatchingGameOverLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B8454918F319CE00A9DA12 /* CardMatchingGameOverLayer.m */; };
+		84B8455418F319CE00A9DA12 /* CardMatchingGamePrepareLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B8454B18F319CE00A9DA12 /* CardMatchingGamePrepareLayer.m */; };
+		84B8455518F319CE00A9DA12 /* CardMatchingLevelDoneLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B8454D18F319CE00A9DA12 /* CardMatchingLevelDoneLayer.m */; };
+		84B8455618F319CE00A9DA12 /* CardMatchPauseMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B8454F18F319CE00A9DA12 /* CardMatchPauseMenu.m */; };
+		84B8455B18F31A1200A9DA12 /* WordCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B8455718F31A1200A9DA12 /* WordCar.m */; };
+		84B8455C18F31A1200A9DA12 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B8455918F31A1200A9DA12 /* Card.m */; };
+		84B8458418F31CED00A9DA12 /* DENNE-SKETCHY.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84B8455F18F31CED00A9DA12 /* DENNE-SKETCHY.ttf */; };
+		84B8458518F31CED00A9DA12 /* DenneSketchy30-ipad.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 84B8456018F31CED00A9DA12 /* DenneSketchy30-ipad.fnt */; };
+		84B8458618F31CED00A9DA12 /* DenneSketchy30-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B8456118F31CED00A9DA12 /* DenneSketchy30-ipad.png */; };
+		84B8458718F31CED00A9DA12 /* DenneSketchy30-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 84B8456218F31CED00A9DA12 /* DenneSketchy30-ipadhd.fnt */; };
+		84B8458818F31CED00A9DA12 /* DenneSketchy30-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B8456318F31CED00A9DA12 /* DenneSketchy30-ipadhd.png */; };
+		84B8458918F31CED00A9DA12 /* DenneSketchy60-ipad.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 84B8456418F31CED00A9DA12 /* DenneSketchy60-ipad.fnt */; };
+		84B8458A18F31CED00A9DA12 /* DenneSketchy60-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B8456518F31CED00A9DA12 /* DenneSketchy60-ipad.png */; };
+		84B8458B18F31CED00A9DA12 /* DenneSketchy60-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 84B8456618F31CED00A9DA12 /* DenneSketchy60-ipadhd.fnt */; };
+		84B8458C18F31CED00A9DA12 /* DenneSketchy60-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B8456718F31CED00A9DA12 /* DenneSketchy60-ipadhd.png */; };
+		84B8458D18F31CED00A9DA12 /* cardMatching-ipad.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B8456918F31CED00A9DA12 /* cardMatching-ipad.plist */; };
+		84B8458E18F31CED00A9DA12 /* cardMatching-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B8456A18F31CED00A9DA12 /* cardMatching-ipad.png */; };
+		84B8458F18F31CED00A9DA12 /* cardMatching-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B8456B18F31CED00A9DA12 /* cardMatching-ipadhd.plist */; };
+		84B8459018F31CED00A9DA12 /* cardMatching-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B8456C18F31CED00A9DA12 /* cardMatching-ipadhd.png */; };
+		84B8459118F31CED00A9DA12 /* cardMatching2-ipad.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B8456D18F31CED00A9DA12 /* cardMatching2-ipad.plist */; };
+		84B8459218F31CED00A9DA12 /* cardMatching2-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B8456E18F31CED00A9DA12 /* cardMatching2-ipad.png */; };
+		84B8459318F31CED00A9DA12 /* cardMatching2-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B8456F18F31CED00A9DA12 /* cardMatching2-ipadhd.plist */; };
+		84B8459418F31CED00A9DA12 /* cardMatching2-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B8457018F31CED00A9DA12 /* cardMatching2-ipadhd.png */; };
+		84B8459518F31CED00A9DA12 /* cardsSheet-ipad.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B8457118F31CED00A9DA12 /* cardsSheet-ipad.plist */; };
+		84B8459618F31CED00A9DA12 /* cardsSheet-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B8457218F31CED00A9DA12 /* cardsSheet-ipad.png */; };
+		84B8459718F31CED00A9DA12 /* cardsSheet-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B8457318F31CED00A9DA12 /* cardsSheet-ipadhd.plist */; };
+		84B8459818F31CED00A9DA12 /* cardsSheet-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B8457418F31CED00A9DA12 /* cardsSheet-ipadhd.png */; };
+		84B8459918F31CED00A9DA12 /* CMsige-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B8457518F31CED00A9DA12 /* CMsige-ipad.png */; };
+		84B8459A18F31CED00A9DA12 /* CMsige-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B8457618F31CED00A9DA12 /* CMsige-ipadhd.png */; };
+		84B845A718F31CED00A9DA12 /* whiteCube.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B8458318F31CED00A9DA12 /* whiteCube.png */; };
+		84B845B718F31DA600A9DA12 /* applause.caf in Resources */ = {isa = PBXBuildFile; fileRef = 84B845A918F31DA600A9DA12 /* applause.caf */; };
+		84B845B818F31DA600A9DA12 /* button.caf in Resources */ = {isa = PBXBuildFile; fileRef = 84B845AA18F31DA600A9DA12 /* button.caf */; };
+		84B845B918F31DA600A9DA12 /* buuu.caf in Resources */ = {isa = PBXBuildFile; fileRef = 84B845AB18F31DA600A9DA12 /* buuu.caf */; };
+		84B845BA18F31DA600A9DA12 /* select1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 84B845AC18F31DA600A9DA12 /* select1.caf */; };
+		84B845BB18F31DA600A9DA12 /* select2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 84B845AD18F31DA600A9DA12 /* select2.caf */; };
+		84B845BC18F31DA600A9DA12 /* firework.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B845AF18F31DA600A9DA12 /* firework.plist */; };
+		84B845BD18F31DA600A9DA12 /* firework.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B845B018F31DA600A9DA12 /* firework.png */; };
+		84B845BE18F31DA600A9DA12 /* star.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B845B118F31DA600A9DA12 /* star.plist */; };
+		84B845BF18F31DA600A9DA12 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B845B218F31DA600A9DA12 /* star.png */; };
+		84B845C018F31DA600A9DA12 /* starParticle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B845B318F31DA600A9DA12 /* starParticle.plist */; };
+		84B845C118F31DA600A9DA12 /* starParticle.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B845B418F31DA600A9DA12 /* starParticle.png */; };
+		84B845C218F31DA600A9DA12 /* starSmash.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B845B518F31DA600A9DA12 /* starSmash.plist */; };
+		84B845C318F31DA600A9DA12 /* starSmash.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B845B618F31DA600A9DA12 /* starSmash.png */; };
+		84B845C618F31E0200A9DA12 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B845C418F31E0200A9DA12 /* Button.m */; };
 		84DBB53C18EAD19A00E7F8C7 /* Arial-Black-ipad.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 84DBB53818EAD19A00E7F8C7 /* Arial-Black-ipad.fnt */; };
 		84DBB53D18EAD19A00E7F8C7 /* Arial-Black-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DBB53918EAD19A00E7F8C7 /* Arial-Black-ipad.png */; };
 		84DBB53E18EAD19A00E7F8C7 /* Arial-Black-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 84DBB53A18EAD19A00E7F8C7 /* Arial-Black-ipadhd.fnt */; };
@@ -261,6 +308,63 @@
 		84B5636518F1B1A400A9B99B /* menu_farm_bg.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = menu_farm_bg.pvr.ccz; sourceTree = "<group>"; };
 		84B5637118F1CFC100A9B99B /* PGGameListMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGGameListMenu.h; sourceTree = "<group>"; };
 		84B5637218F1CFC100A9B99B /* PGGameListMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGGameListMenu.m; sourceTree = "<group>"; };
+		84B8454218F319CE00A9DA12 /* CardMatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatching.h; sourceTree = "<group>"; };
+		84B8454318F319CE00A9DA12 /* CardMatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatching.m; sourceTree = "<group>"; };
+		84B8454418F319CE00A9DA12 /* CardMatchingGameDoneLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchingGameDoneLayer.h; sourceTree = "<group>"; };
+		84B8454518F319CE00A9DA12 /* CardMatchingGameDoneLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchingGameDoneLayer.m; sourceTree = "<group>"; };
+		84B8454618F319CE00A9DA12 /* CardMatchingGameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchingGameLayer.h; sourceTree = "<group>"; };
+		84B8454718F319CE00A9DA12 /* CardMatchingGameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchingGameLayer.m; sourceTree = "<group>"; };
+		84B8454818F319CE00A9DA12 /* CardMatchingGameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchingGameOverLayer.h; sourceTree = "<group>"; };
+		84B8454918F319CE00A9DA12 /* CardMatchingGameOverLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchingGameOverLayer.m; sourceTree = "<group>"; };
+		84B8454A18F319CE00A9DA12 /* CardMatchingGamePrepareLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchingGamePrepareLayer.h; sourceTree = "<group>"; };
+		84B8454B18F319CE00A9DA12 /* CardMatchingGamePrepareLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchingGamePrepareLayer.m; sourceTree = "<group>"; };
+		84B8454C18F319CE00A9DA12 /* CardMatchingLevelDoneLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchingLevelDoneLayer.h; sourceTree = "<group>"; };
+		84B8454D18F319CE00A9DA12 /* CardMatchingLevelDoneLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchingLevelDoneLayer.m; sourceTree = "<group>"; };
+		84B8454E18F319CE00A9DA12 /* CardMatchPauseMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchPauseMenu.h; sourceTree = "<group>"; };
+		84B8454F18F319CE00A9DA12 /* CardMatchPauseMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchPauseMenu.m; sourceTree = "<group>"; };
+		84B8455718F31A1200A9DA12 /* WordCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordCar.m; sourceTree = "<group>"; };
+		84B8455818F31A1200A9DA12 /* WordCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordCar.h; sourceTree = "<group>"; };
+		84B8455918F31A1200A9DA12 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		84B8455A18F31A1200A9DA12 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		84B8455F18F31CED00A9DA12 /* DENNE-SKETCHY.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DENNE-SKETCHY.ttf"; sourceTree = "<group>"; };
+		84B8456018F31CED00A9DA12 /* DenneSketchy30-ipad.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "DenneSketchy30-ipad.fnt"; sourceTree = "<group>"; };
+		84B8456118F31CED00A9DA12 /* DenneSketchy30-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DenneSketchy30-ipad.png"; sourceTree = "<group>"; };
+		84B8456218F31CED00A9DA12 /* DenneSketchy30-ipadhd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "DenneSketchy30-ipadhd.fnt"; sourceTree = "<group>"; };
+		84B8456318F31CED00A9DA12 /* DenneSketchy30-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DenneSketchy30-ipadhd.png"; sourceTree = "<group>"; };
+		84B8456418F31CED00A9DA12 /* DenneSketchy60-ipad.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "DenneSketchy60-ipad.fnt"; sourceTree = "<group>"; };
+		84B8456518F31CED00A9DA12 /* DenneSketchy60-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DenneSketchy60-ipad.png"; sourceTree = "<group>"; };
+		84B8456618F31CED00A9DA12 /* DenneSketchy60-ipadhd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "DenneSketchy60-ipadhd.fnt"; sourceTree = "<group>"; };
+		84B8456718F31CED00A9DA12 /* DenneSketchy60-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DenneSketchy60-ipadhd.png"; sourceTree = "<group>"; };
+		84B8456918F31CED00A9DA12 /* cardMatching-ipad.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "cardMatching-ipad.plist"; sourceTree = "<group>"; };
+		84B8456A18F31CED00A9DA12 /* cardMatching-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cardMatching-ipad.png"; sourceTree = "<group>"; };
+		84B8456B18F31CED00A9DA12 /* cardMatching-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "cardMatching-ipadhd.plist"; sourceTree = "<group>"; };
+		84B8456C18F31CED00A9DA12 /* cardMatching-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cardMatching-ipadhd.png"; sourceTree = "<group>"; };
+		84B8456D18F31CED00A9DA12 /* cardMatching2-ipad.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "cardMatching2-ipad.plist"; sourceTree = "<group>"; };
+		84B8456E18F31CED00A9DA12 /* cardMatching2-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cardMatching2-ipad.png"; sourceTree = "<group>"; };
+		84B8456F18F31CED00A9DA12 /* cardMatching2-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "cardMatching2-ipadhd.plist"; sourceTree = "<group>"; };
+		84B8457018F31CED00A9DA12 /* cardMatching2-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cardMatching2-ipadhd.png"; sourceTree = "<group>"; };
+		84B8457118F31CED00A9DA12 /* cardsSheet-ipad.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "cardsSheet-ipad.plist"; sourceTree = "<group>"; };
+		84B8457218F31CED00A9DA12 /* cardsSheet-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cardsSheet-ipad.png"; sourceTree = "<group>"; };
+		84B8457318F31CED00A9DA12 /* cardsSheet-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "cardsSheet-ipadhd.plist"; sourceTree = "<group>"; };
+		84B8457418F31CED00A9DA12 /* cardsSheet-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cardsSheet-ipadhd.png"; sourceTree = "<group>"; };
+		84B8457518F31CED00A9DA12 /* CMsige-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CMsige-ipad.png"; sourceTree = "<group>"; };
+		84B8457618F31CED00A9DA12 /* CMsige-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CMsige-ipadhd.png"; sourceTree = "<group>"; };
+		84B8458318F31CED00A9DA12 /* whiteCube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteCube.png; sourceTree = "<group>"; };
+		84B845A918F31DA600A9DA12 /* applause.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = applause.caf; sourceTree = "<group>"; };
+		84B845AA18F31DA600A9DA12 /* button.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = button.caf; sourceTree = "<group>"; };
+		84B845AB18F31DA600A9DA12 /* buuu.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = buuu.caf; sourceTree = "<group>"; };
+		84B845AC18F31DA600A9DA12 /* select1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = select1.caf; sourceTree = "<group>"; };
+		84B845AD18F31DA600A9DA12 /* select2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = select2.caf; sourceTree = "<group>"; };
+		84B845AF18F31DA600A9DA12 /* firework.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = firework.plist; sourceTree = "<group>"; };
+		84B845B018F31DA600A9DA12 /* firework.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firework.png; sourceTree = "<group>"; };
+		84B845B118F31DA600A9DA12 /* star.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = star.plist; sourceTree = "<group>"; };
+		84B845B218F31DA600A9DA12 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		84B845B318F31DA600A9DA12 /* starParticle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = starParticle.plist; sourceTree = "<group>"; };
+		84B845B418F31DA600A9DA12 /* starParticle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starParticle.png; sourceTree = "<group>"; };
+		84B845B518F31DA600A9DA12 /* starSmash.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = starSmash.plist; sourceTree = "<group>"; };
+		84B845B618F31DA600A9DA12 /* starSmash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starSmash.png; sourceTree = "<group>"; };
+		84B845C418F31E0200A9DA12 /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
+		84B845C518F31E0200A9DA12 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
 		84DBB53618E9C0E400E7F8C7 /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 		84DBB53818EAD19A00E7F8C7 /* Arial-Black-ipad.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Arial-Black-ipad.fnt"; sourceTree = "<group>"; };
 		84DBB53918EAD19A00E7F8C7 /* Arial-Black-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arial-Black-ipad.png"; sourceTree = "<group>"; };
@@ -683,6 +787,105 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84B8454118F319CE00A9DA12 /* cardMatching */ = {
+			isa = PBXGroup;
+			children = (
+				84B845C418F31E0200A9DA12 /* Button.m */,
+				84B845C518F31E0200A9DA12 /* Button.h */,
+				84B8454218F319CE00A9DA12 /* CardMatching.h */,
+				84B8454318F319CE00A9DA12 /* CardMatching.m */,
+				84B8454418F319CE00A9DA12 /* CardMatchingGameDoneLayer.h */,
+				84B8454518F319CE00A9DA12 /* CardMatchingGameDoneLayer.m */,
+				84B8454618F319CE00A9DA12 /* CardMatchingGameLayer.h */,
+				84B8454718F319CE00A9DA12 /* CardMatchingGameLayer.m */,
+				84B8454818F319CE00A9DA12 /* CardMatchingGameOverLayer.h */,
+				84B8454918F319CE00A9DA12 /* CardMatchingGameOverLayer.m */,
+				84B8454A18F319CE00A9DA12 /* CardMatchingGamePrepareLayer.h */,
+				84B8454B18F319CE00A9DA12 /* CardMatchingGamePrepareLayer.m */,
+				84B8454C18F319CE00A9DA12 /* CardMatchingLevelDoneLayer.h */,
+				84B8454D18F319CE00A9DA12 /* CardMatchingLevelDoneLayer.m */,
+				84B8454E18F319CE00A9DA12 /* CardMatchPauseMenu.h */,
+				84B8454F18F319CE00A9DA12 /* CardMatchPauseMenu.m */,
+			);
+			path = cardMatching;
+			sourceTree = "<group>";
+		};
+		84B8455D18F31A9F00A9DA12 /* card match */ = {
+			isa = PBXGroup;
+			children = (
+				84B845A818F31DA600A9DA12 /* sonud effect */,
+				84B845AE18F31DA600A9DA12 /* particles */,
+				84B8455E18F31CED00A9DA12 /* fonts */,
+				84B8456818F31CED00A9DA12 /* art work */,
+			);
+			name = "card match";
+			sourceTree = "<group>";
+		};
+		84B8455E18F31CED00A9DA12 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				84B8455F18F31CED00A9DA12 /* DENNE-SKETCHY.ttf */,
+				84B8456018F31CED00A9DA12 /* DenneSketchy30-ipad.fnt */,
+				84B8456118F31CED00A9DA12 /* DenneSketchy30-ipad.png */,
+				84B8456218F31CED00A9DA12 /* DenneSketchy30-ipadhd.fnt */,
+				84B8456318F31CED00A9DA12 /* DenneSketchy30-ipadhd.png */,
+				84B8456418F31CED00A9DA12 /* DenneSketchy60-ipad.fnt */,
+				84B8456518F31CED00A9DA12 /* DenneSketchy60-ipad.png */,
+				84B8456618F31CED00A9DA12 /* DenneSketchy60-ipadhd.fnt */,
+				84B8456718F31CED00A9DA12 /* DenneSketchy60-ipadhd.png */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		84B8456818F31CED00A9DA12 /* art work */ = {
+			isa = PBXGroup;
+			children = (
+				84B8456918F31CED00A9DA12 /* cardMatching-ipad.plist */,
+				84B8456A18F31CED00A9DA12 /* cardMatching-ipad.png */,
+				84B8456B18F31CED00A9DA12 /* cardMatching-ipadhd.plist */,
+				84B8456C18F31CED00A9DA12 /* cardMatching-ipadhd.png */,
+				84B8456D18F31CED00A9DA12 /* cardMatching2-ipad.plist */,
+				84B8456E18F31CED00A9DA12 /* cardMatching2-ipad.png */,
+				84B8456F18F31CED00A9DA12 /* cardMatching2-ipadhd.plist */,
+				84B8457018F31CED00A9DA12 /* cardMatching2-ipadhd.png */,
+				84B8457118F31CED00A9DA12 /* cardsSheet-ipad.plist */,
+				84B8457218F31CED00A9DA12 /* cardsSheet-ipad.png */,
+				84B8457318F31CED00A9DA12 /* cardsSheet-ipadhd.plist */,
+				84B8457418F31CED00A9DA12 /* cardsSheet-ipadhd.png */,
+				84B8457518F31CED00A9DA12 /* CMsige-ipad.png */,
+				84B8457618F31CED00A9DA12 /* CMsige-ipadhd.png */,
+				84B8458318F31CED00A9DA12 /* whiteCube.png */,
+			);
+			path = "art work";
+			sourceTree = "<group>";
+		};
+		84B845A818F31DA600A9DA12 /* sonud effect */ = {
+			isa = PBXGroup;
+			children = (
+				84B845A918F31DA600A9DA12 /* applause.caf */,
+				84B845AA18F31DA600A9DA12 /* button.caf */,
+				84B845AB18F31DA600A9DA12 /* buuu.caf */,
+				84B845AC18F31DA600A9DA12 /* select1.caf */,
+				84B845AD18F31DA600A9DA12 /* select2.caf */,
+			);
+			path = "sonud effect";
+			sourceTree = "<group>";
+		};
+		84B845AE18F31DA600A9DA12 /* particles */ = {
+			isa = PBXGroup;
+			children = (
+				84B845AF18F31DA600A9DA12 /* firework.plist */,
+				84B845B018F31DA600A9DA12 /* firework.png */,
+				84B845B118F31DA600A9DA12 /* star.plist */,
+				84B845B218F31DA600A9DA12 /* star.png */,
+				84B845B318F31DA600A9DA12 /* starParticle.plist */,
+				84B845B418F31DA600A9DA12 /* starParticle.png */,
+				84B845B518F31DA600A9DA12 /* starSmash.plist */,
+				84B845B618F31DA600A9DA12 /* starSmash.png */,
+			);
+			path = particles;
+			sourceTree = "<group>";
+		};
 		84DBB53718EAD19A00E7F8C7 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -806,6 +1009,7 @@
 		84F0311218E9A6A90097553C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				84B8455D18F31A9F00A9DA12 /* card match */,
 				84B5635D18F1B1A400A9B99B /* menu_stage-ipadhd.pvr.ccz */,
 				84B5635E18F1B1A400A9B99B /* menu_stage-ipadhd.plist */,
 				84B5635F18F1B1A400A9B99B /* menu_stage-ipad.pvr.ccz */,
@@ -1337,6 +1541,10 @@
 		84F0331418E9B6D60097553C /* Element */ = {
 			isa = PBXGroup;
 			children = (
+				84B8455718F31A1200A9DA12 /* WordCar.m */,
+				84B8455818F31A1200A9DA12 /* WordCar.h */,
+				84B8455918F31A1200A9DA12 /* Card.m */,
+				84B8455A18F31A1200A9DA12 /* Card.h */,
 				84B5635718F1AFDF00A9B99B /* CCScrollLayer.m */,
 				84B5635818F1AFDF00A9B99B /* CCScrollLayer.h */,
 				84AF9EA818F14D7000678CD1 /* GradientLabel.m */,
@@ -1356,6 +1564,7 @@
 		84F0331518E9B6D60097553C /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				84B8454118F319CE00A9DA12 /* cardMatching */,
 				84E9D9CC18F03D2D00EEAA91 /* PGSearchWord.h */,
 				84E9D9CD18F03D2D00EEAA91 /* PGSearchWord.m */,
 				84DBB54318EAD2DF00E7F8C7 /* PGLearnWord.h */,
@@ -1427,12 +1636,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B845C218F31DA600A9DA12 /* starSmash.plist in Resources */,
+				84B8458A18F31CED00A9DA12 /* DenneSketchy60-ipad.png in Resources */,
 				84E9D9C718EFE73500EEAA91 /* van.caf in Resources */,
+				84B8458418F31CED00A9DA12 /* DENNE-SKETCHY.ttf in Resources */,
 				84E9D9C318EFE73500EEAA91 /* sat.caf in Resources */,
 				84E9D9B718EFE73500EEAA91 /* man.caf in Resources */,
 				84E9D9A318EFE73500EEAA91 /* bag.caf in Resources */,
 				84E9D9B518EFE73500EEAA91 /* lap.caf in Resources */,
 				84E9D9A818EFE73500EEAA91 /* dam.caf in Resources */,
+				84B8458E18F31CED00A9DA12 /* cardMatching-ipad.png in Resources */,
 				84DBB5A018EEC88800E7F8C7 /* learn_word_bg.png in Resources */,
 				84E9D9CA18EFE73500EEAA91 /* yan.caf in Resources */,
 				84DBB53C18EAD19A00E7F8C7 /* Arial-Black-ipad.fnt in Resources */,
@@ -1440,32 +1653,53 @@
 				84E9D9A218EFE73500EEAA91 /* add.caf in Resources */,
 				84E9D9BD18EFE73500EEAA91 /* pam.caf in Resources */,
 				84E9D9C618EFE73500EEAA91 /* tap.caf in Resources */,
+				84B845BC18F31DA600A9DA12 /* firework.plist in Resources */,
+				84B8459318F31CED00A9DA12 /* cardMatching2-ipadhd.plist in Resources */,
+				84B8459818F31CED00A9DA12 /* cardsSheet-ipadhd.png in Resources */,
 				84E9D9C218EFE73500EEAA91 /* sad.caf in Resources */,
+				84B845BB18F31DA600A9DA12 /* select2.caf in Resources */,
 				84F0328218E9A6AA0097553C /* ChangeLog in Resources */,
 				84E9D9C518EFE73500EEAA91 /* tan.caf in Resources */,
 				84B5636D18F1B1A400A9B99B /* menu_letter-ipad.pvr.ccz in Resources */,
 				84E9D9AD18EFE73500EEAA91 /* gat.caf in Resources */,
+				84B845BF18F31DA600A9DA12 /* star.png in Resources */,
 				84B5636718F1B1A400A9B99B /* menu_stage-ipadhd.pvr.ccz in Resources */,
 				84E9D9AA18EFE73500EEAA91 /* fat.caf in Resources */,
+				84B845B918F31DA600A9DA12 /* buuu.caf in Resources */,
 				84E9D9AC18EFE73500EEAA91 /* gap.caf in Resources */,
 				84B5636B18F1B1A400A9B99B /* menu_letter-ipadhd.pvr.ccz in Resources */,
+				84B8459A18F31CED00A9DA12 /* CMsige-ipadhd.png in Resources */,
 				84E9D9C418EFE73500EEAA91 /* tag.caf in Resources */,
+				84B845B718F31DA600A9DA12 /* applause.caf in Resources */,
 				84E9D9AF18EFE73500EEAA91 /* hag.caf in Resources */,
 				84E9D9A618EFE73500EEAA91 /* cap.caf in Resources */,
 				84E9D9AB18EFE73500EEAA91 /* gam.caf in Resources */,
 				84B5635618F1999700A9B99B /* DENNE-SKETCHY.ttf in Resources */,
 				84DBB53F18EAD19A00E7F8C7 /* Arial-Black-ipadhd.png in Resources */,
 				84E9D9C018EFE73500EEAA91 /* rag.caf in Resources */,
+				84B845BE18F31DA600A9DA12 /* star.plist in Resources */,
 				84E9D9B918EFE73500EEAA91 /* mat.caf in Resources */,
+				84B845BD18F31DA600A9DA12 /* firework.png in Resources */,
+				84B8458B18F31CED00A9DA12 /* DenneSketchy60-ipadhd.fnt in Resources */,
 				84E9D9A418EFE73500EEAA91 /* bat.caf in Resources */,
+				84B845C118F31DA600A9DA12 /* starParticle.png in Resources */,
 				84B5636E18F1B1A400A9B99B /* menu_letter-ipad.plist in Resources */,
+				84B8459718F31CED00A9DA12 /* cardsSheet-ipadhd.plist in Resources */,
+				84B8458618F31CED00A9DA12 /* DenneSketchy30-ipad.png in Resources */,
+				84B8458D18F31CED00A9DA12 /* cardMatching-ipad.plist in Resources */,
+				84B8458718F31CED00A9DA12 /* DenneSketchy30-ipadhd.fnt in Resources */,
 				84E9D9B618EFE73500EEAA91 /* mad.caf in Resources */,
 				84B5636A18F1B1A400A9B99B /* menu_stage-ipad.plist in Resources */,
+				84B845A718F31CED00A9DA12 /* whiteCube.png in Resources */,
 				84E9D9D918F0952700EEAA91 /* FrankfurterStd-ipadhd.fnt in Resources */,
 				84E9D9C818EFE73500EEAA91 /* wat.caf in Resources */,
+				84B8459218F31CED00A9DA12 /* cardMatching2-ipad.png in Resources */,
 				84B5636918F1B1A400A9B99B /* menu_stage-ipad.pvr.ccz in Resources */,
 				84DBB53D18EAD19A00E7F8C7 /* Arial-Black-ipad.png in Resources */,
+				84B845B818F31DA600A9DA12 /* button.caf in Resources */,
+				84B8458818F31CED00A9DA12 /* DenneSketchy30-ipadhd.png in Resources */,
 				84E9D9D818F0952700EEAA91 /* FrankfurterStd-ipadhd.png in Resources */,
+				84B845C018F31DA600A9DA12 /* starParticle.plist in Resources */,
 				84E9D9CB18EFE73500EEAA91 /* zan.caf in Resources */,
 				84B5636F18F1B1A400A9B99B /* menu_farm_bg.pvr.ccz in Resources */,
 				84E9D9BA18EFE73500EEAA91 /* nag.caf in Resources */,
@@ -1474,22 +1708,34 @@
 				84B5636C18F1B1A400A9B99B /* menu_letter-ipadhd.plist in Resources */,
 				84E9D9C918EFE73500EEAA91 /* yam.caf in Resources */,
 				84F0312918E9A6A90097553C /* iTunesArtwork in Resources */,
+				84B8459418F31CED00A9DA12 /* cardMatching2-ipadhd.png in Resources */,
+				84B845BA18F31DA600A9DA12 /* select1.caf in Resources */,
 				84E9D9A518EFE73500EEAA91 /* cam.caf in Resources */,
+				84B8459918F31CED00A9DA12 /* CMsige-ipad.png in Resources */,
+				84B8459618F31CED00A9DA12 /* cardsSheet-ipad.png in Resources */,
 				84E9D9BC18EFE73500EEAA91 /* pad.caf in Resources */,
 				84E9D9D618F0952700EEAA91 /* FrankfurterStd-ipad.png in Resources */,
 				84E9D9D718F0952700EEAA91 /* FrankfurterStd-ipad.fnt in Resources */,
+				84B8458518F31CED00A9DA12 /* DenneSketchy30-ipad.fnt in Resources */,
+				84B8458C18F31CED00A9DA12 /* DenneSketchy60-ipadhd.png in Resources */,
+				84B8459118F31CED00A9DA12 /* cardMatching2-ipad.plist in Resources */,
 				84E9D9BF18EFE73500EEAA91 /* pat.caf in Resources */,
 				84E9D9BB18EFE73500EEAA91 /* nap.caf in Resources */,
 				84E9D9C118EFE73500EEAA91 /* rat.caf in Resources */,
 				84DBB53E18EAD19A00E7F8C7 /* Arial-Black-ipadhd.fnt in Resources */,
 				84E9D9A918EFE73500EEAA91 /* fan.caf in Resources */,
+				84B8459018F31CED00A9DA12 /* cardMatching-ipadhd.png in Resources */,
+				84B8459518F31CED00A9DA12 /* cardsSheet-ipad.plist in Resources */,
 				84E9D9B318EFE73500EEAA91 /* lad.caf in Resources */,
 				84F0330F18E9B44D0097553C /* Images.xcassets in Resources */,
+				84B8458918F31CED00A9DA12 /* DenneSketchy60-ipad.fnt in Resources */,
 				84E9D9B018EFE73500EEAA91 /* ham.caf in Resources */,
 				84B5636818F1B1A400A9B99B /* menu_stage-ipadhd.plist in Resources */,
 				84E9D9AE18EFE73500EEAA91 /* glad.caf in Resources */,
+				84B845C318F31DA600A9DA12 /* starSmash.png in Resources */,
 				84DBB54A18EAF33600E7F8C7 /* blockTexture.png in Resources */,
 				84E9D9B818EFE73500EEAA91 /* map.caf in Resources */,
+				84B8458F18F31CED00A9DA12 /* cardMatching-ipadhd.plist in Resources */,
 				84E9D9B118EFE73500EEAA91 /* hat.caf in Resources */,
 				84E9D9B418EFE73500EEAA91 /* lag.caf in Resources */,
 			);
@@ -1522,6 +1768,7 @@
 				84F032EB18E9A6AB0097553C /* cpSpaceComponent.c in Sources */,
 				84F0329418E9A6AA0097553C /* ray2.c in Sources */,
 				84F0322F18E9A6AA0097553C /* base64.c in Sources */,
+				84B8455B18F31A1200A9DA12 /* WordCar.m in Sources */,
 				84F0315218E9A6A90097553C /* CCActionTween.m in Sources */,
 				84F0318918E9A6A90097553C /* CCLabelBMFont.m in Sources */,
 				84F0323618E9A6AA0097553C /* ccCArray.m in Sources */,
@@ -1532,6 +1779,7 @@
 				84F032CD18E9A6AA0097553C /* cpPivotJoint.c in Sources */,
 				84F0325418E9A6AA0097553C /* ZipUtils.m in Sources */,
 				84F0314618E9A6A90097553C /* CCActionManager.m in Sources */,
+				84B845C618F31E0200A9DA12 /* Button.m in Sources */,
 				84F031AE18E9A6AA0097553C /* CCParticleSystemQuad.m in Sources */,
 				84F0317118E9A6A90097553C /* CCDrawNode.m in Sources */,
 				84F0320318E9A6AA0097553C /* CCTransitionPageTurn.m in Sources */,
@@ -1568,6 +1816,7 @@
 				84F0318318E9A6A90097553C /* CCGrid.m in Sources */,
 				84F0329218E9A6AA0097553C /* quaternion.c in Sources */,
 				84F031DF18E9A6AA0097553C /* CCSpriteFrame.m in Sources */,
+				84B8455418F319CE00A9DA12 /* CardMatchingGamePrepareLayer.m in Sources */,
 				84F0314C18E9A6A90097553C /* CCActionProgressTimer.m in Sources */,
 				84DBB54218EAD23600E7F8C7 /* PGManager.m in Sources */,
 				84F0312E18E9A6A90097553C /* CCAction.m in Sources */,
@@ -1588,11 +1837,13 @@
 				84F0321F18E9A6AA0097553C /* CCTouchHandler.m in Sources */,
 				84F0319918E9A6A90097553C /* CCMotionStreak.m in Sources */,
 				84F032D718E9A6AA0097553C /* cpArbiter.c in Sources */,
+				84B8455518F319CE00A9DA12 /* CardMatchingLevelDoneLayer.m in Sources */,
 				84F0321818E9A6AA0097553C /* CCGLView.m in Sources */,
 				84F0324518E9A6AA0097553C /* CGPointExtension.m in Sources */,
 				84F0314918E9A6A90097553C /* CCActionPageTurn3D.m in Sources */,
 				84F032DF18E9A6AB0097553C /* cpBody.c in Sources */,
 				84F0329A18E9A6AA0097553C /* vec3.c in Sources */,
+				84B8455018F319CE00A9DA12 /* CardMatching.m in Sources */,
 				84F0324C18E9A6AA0097553C /* TGAlib.m in Sources */,
 				84F032DB18E9A6AA0097553C /* cpBB.c in Sources */,
 				84F0315518E9A6A90097553C /* CCAnimation.m in Sources */,
@@ -1606,6 +1857,7 @@
 				84F0320618E9A6AA0097553C /* CCTransitionProgress.m in Sources */,
 				84F0322918E9A6AA0097553C /* CCGLView.m in Sources */,
 				84F0325D18E9A6AA0097553C /* CDOpenALSupport.m in Sources */,
+				84B8455618F319CE00A9DA12 /* CardMatchPauseMenu.m in Sources */,
 				84F0314018E9A6A90097553C /* CCActionInstant.m in Sources */,
 				84F0316118E9A6A90097553C /* CCClippingNode.m in Sources */,
 				84F031E518E9A6AA0097553C /* CCTexture2D.m in Sources */,
@@ -1614,13 +1866,16 @@
 				84F0314318E9A6A90097553C /* CCActionInterval.m in Sources */,
 				84F032CF18E9A6AA0097553C /* cpRatchetJoint.c in Sources */,
 				84F031B118E9A6AA0097553C /* CCPhysicsDebugNode.m in Sources */,
+				84B8455C18F31A1200A9DA12 /* Card.m in Sources */,
 				84F0313718E9A6A90097553C /* CCActionEase.m in Sources */,
 				84F0317418E9A6A90097553C /* CCFontDefinition.m in Sources */,
+				84B8455218F319CE00A9DA12 /* CardMatchingGameLayer.m in Sources */,
 				84AF9EAA18F14D7000678CD1 /* GradientLabel.m in Sources */,
 				84F031B418E9A6AA0097553C /* CCPhysicsSprite.mm in Sources */,
 				84F032DD18E9A6AA0097553C /* cpBBTree.c in Sources */,
 				84B5635918F1AFDF00A9B99B /* CCScrollLayer.m in Sources */,
 				84F0329818E9A6AA0097553C /* vec2.c in Sources */,
+				84B8455118F319CE00A9DA12 /* CardMatchingGameDoneLayer.m in Sources */,
 				84F0328818E9A6AA0097553C /* matrix.c in Sources */,
 				84F0316E18E9A6A90097553C /* CCDrawingPrimitives.m in Sources */,
 				84F032D318E9A6AA0097553C /* cpSimpleMotor.c in Sources */,
@@ -1655,6 +1910,7 @@
 				84F0321C18E9A6AA0097553C /* CCTouchDispatcher.m in Sources */,
 				84F0319F18E9A6A90097553C /* CCNode.m in Sources */,
 				84F032F318E9A6AB0097553C /* cpSpatialIndex.c in Sources */,
+				84B8455318F319CE00A9DA12 /* CardMatchingGameOverLayer.m in Sources */,
 				84DBB54518EAD2DF00E7F8C7 /* PGLearnWord.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

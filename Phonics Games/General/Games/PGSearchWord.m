@@ -155,7 +155,12 @@
         for (NSUInteger j=0;j<n;j++)
             letters[i][j] = '*';
     
-    NSMutableArray *remainWords = [NSMutableArray arrayWithArray:words];
+    NSMutableArray *remainWords = [NSMutableArray arrayWithCapacity:words.count];
+    for (NSString *word in words)
+    {
+        [remainWords addObject:[word uppercaseString]];
+    }
+    
     NSMutableArray *activeWords = [NSMutableArray array];
     
     enum Direction
@@ -260,7 +265,7 @@
         int i = 0;
         for (;i<_remainWord;i++)
         {
-            NSString *_word = [[remainWords objectAtIndex:i] uppercaseString];
+            NSString *_word = [remainWords objectAtIndex:i];
             SLLog(@"get word:%@",_word);
             int _index = [_word insertIntoString:l enableBackward:YES];
             if (_index == 0) continue;

@@ -11,6 +11,7 @@
 
 #import "PGLearnWord.h"
 #import "PGSearchWord.h"
+#import "CardMatching.h"
 
 #import "PGStageMenu.h"
 
@@ -28,7 +29,7 @@
 {
     self = [super init];
     
-    NSArray *w = @[@"CAT",@"MAT",@"ADD",@"BAG",@"BAT",@"DAM"];
+    NSArray *w = @[@"cat",@"mat",@"add",@"bag",@"bat",@"man"];
     
     NSString *font = @"Avenir-BlackOblique";
     NSString *l = [NSString stringWithFormat:@"%c",letter];
@@ -40,19 +41,19 @@
     [CCMenuItemFont setFontName:font];
     
     CCMenuItemFont *learnWord = [CCMenuItemFont itemWithString:@"Learn Word" block:^(id sender) {
-        [[CCDirector sharedDirector] replaceScene:[PGLearnWord gameWithWords:w]];
+        [[CCDirector sharedDirector] pushScene:[PGLearnWord gameWithWords:w]];
     }];
     learnWord.color = ccWHITE;
     
     CCMenuItemFont *searchWord = [CCMenuItemFont itemWithString:@"Search Word" block:^(id sender) {
-        [[CCDirector sharedDirector] replaceScene:[PGSearchWord gameWithWords:w panelSize:CGSizeMake(630, 720) gridSize:CGSizeMake(90, 90)]];
+        [[CCDirector sharedDirector] pushScene:[PGSearchWord gameWithWords:w panelSize:CGSizeMake(630, 720) gridSize:CGSizeMake(90, 90)]];
     }];
     searchWord.color = ccWHITE;
     
     CCMenuItemFont *cardMatch = [CCMenuItemFont itemWithString:@"Card Match" block:^(id sender) {
-        
+        [[CCDirector sharedDirector] pushScene:[CardMatching gameWithWords:w]];
     }];
-    cardMatch.isEnabled = NO;
+//    cardMatch.isEnabled = NO;
     cardMatch.color = ccWHITE;
     
     CCMenuItemFont *bubble = [CCMenuItemFont itemWithString:@"Bubble" block:^(id sender) {
