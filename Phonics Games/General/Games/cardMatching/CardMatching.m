@@ -162,6 +162,7 @@
 
 - (void) dealloc
 {
+    CCLOG(@"card match:dealloc");
     [super dealloc];
 }
 

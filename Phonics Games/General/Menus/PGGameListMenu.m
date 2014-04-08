@@ -12,8 +12,10 @@
 #import "PGLearnWord.h"
 #import "PGSearchWord.h"
 #import "CardMatching.h"
+#import "BubbleGameLayer.h"
 
 #import "PGStageMenu.h"
+#import "LoadingLayer.h"
 
 @implementation PGGameListMenu
 
@@ -58,9 +60,33 @@
     
     CCMenuItemFont *bubble = [CCMenuItemFont itemWithString:@"Bubble" block:^(id sender) {
         
+        [[CCDirector sharedDirector] pushScene:[LoadingLayer scene]];
+        
+        dispatch_queue_t queue = dispatch_queue_create("bubble", NULL);
+        dispatch_async(queue, ^{
+            CCGLView *view = (CCGLView*)[[CCDirector sharedDirector] view];
+            EAGLContext *_auxGLcontext = [[EAGLContext alloc]
+                             initWithAPI:kEAGLRenderingAPIOpenGLES2
+                             sharegroup:[[view context] sharegroup]];
+            if( [EAGLContext setCurrentContext:_auxGLcontext] )
+            {
+                [BubbleGameLayer preloadTextures];
+                glFlush();
+                
+                [EAGLContext setCurrentContext:nil];
+            }
+            
+            [_auxGLcontext release];
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                CCScene *game = [BubbleGameLayer gameWithWords:w];
+                [[CCDirector sharedDirector] popScene];
+                [[CCDirector sharedDirector] pushScene:game];
+            });
+        });
+        
+        dispatch_release(queue);
     }];
     bubble.color = ccWHITE;
-    bubble.isEnabled = NO;
     
     CCMenuItemFont *back = [CCMenuItemFont itemWithString:@"BACK" block:^(id sender) {
         [[CCDirector sharedDirector] replaceScene:[PGStageMenu stageMenu]];
@@ -73,6 +99,23 @@
     [self addChild:menu];
     
     return self;
+}
+
+- (void) onEnter
+{
+    [super onEnter];
+    
+}
+
+- (void) onEnterTransitionDidFinish
+{
+    [super onEnterTransitionDidFinish];
+}
+
+- (void) dealloc
+{
+    NSLog(@"game list : dealloc");
+    [super dealloc];
 }
 
 @end

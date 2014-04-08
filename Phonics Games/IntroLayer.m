@@ -43,6 +43,8 @@
 	if( (self=[super init])) {
         CCFontDefinition *font = [[CCFontDefinition alloc] initWithFontName:@"HoeflerText-BlackItalic" fontSize:48];
         CCLabelTTF *welcome = [CCLabelTTF labelWithString:@"Phonics Games" fontDefinition:font];
+        
+        [font release];
 		welcome.position = CMP(0.5);
         [self addChild:welcome];
 	}

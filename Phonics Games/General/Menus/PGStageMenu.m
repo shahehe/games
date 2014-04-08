@@ -83,6 +83,11 @@
     return self;
 }
 
+- (void) onEnterTransitionDidFinish
+{
+    [super onEnterTransitionDidFinish];
+}
+
 - (void) createScrollLayer
 {
     NSMutableArray *items = [NSMutableArray array];

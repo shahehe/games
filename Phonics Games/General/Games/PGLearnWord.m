@@ -174,6 +174,8 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
 
 - (void) dealloc
 {
+    SLLog(@"learn word:dealloc");
+    
     for( int i=0;i<4;i++) {
 		cpShapeFree( _walls[i] );
 	}
