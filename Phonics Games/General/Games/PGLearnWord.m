@@ -79,9 +79,9 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
     self.words = words;
     _currentIndex = NSNotFound;
     
-//    // background
+    // background
     RGB565
-    CCSprite *bg = [CCSprite spriteWithFile:@"learn_word_bg.png"];
+    CCSprite *bg = [CCSprite spriteWithFile:@"learn_word_bg.pvr.ccz"];
     PIXEL_FORMAT_DEFAULT
     bg.position = CMP(0.5);
     bg.zOrder = Z_BACKGROUND;
@@ -90,7 +90,20 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
     bg.scaleY = SCREEN_HEIGHT/bg.contentSize.height;
     [self addChild:bg];
     
-    
+    RGBA4444
+    {
+        CCSprite *pinwheel = [CCSprite spriteWithFile:@"pinwheel.pvr.ccz"];
+        pinwheel.position = CCMP(0.197, 0.802);
+        [self addChild:pinwheel];
+        [pinwheel runAction:[CCRepeatForever actionWithAction:[CCRotateBy actionWithDuration:5 angle:360]]];
+    }
+    {
+        CCSprite *pinwheel = [CCSprite spriteWithFile:@"pinwheel.pvr.ccz"];
+        pinwheel.position = CCMP(0.805, 0.802);
+        [self addChild:pinwheel];
+        [pinwheel runAction:[CCRepeatForever actionWithAction:[CCRotateBy actionWithDuration:5 angle:360]]];
+    }
+    PIXEL_FORMAT_DEFAULT
     
     blocks = [[CCArray alloc] init];
     wordResults = [[NSMutableDictionary alloc] initWithCapacity:[words count]];
@@ -99,17 +112,17 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
     audioPlayer.delegate = self;
     
     timer = [[PGTimer alloc] init];
-    //menu
-    __block PGLearnWord *self_copy = self;
-    CCMenuItemFont *start = [CCMenuItemFont itemWithString:@"Start" block:^(id sender) {
-        self_copy.currentIndex = 0;
-        [self_copy startGame];
-        [sender removeFromParentAndCleanup:YES];
-    }];
-    start.color = ccGREEN;
-    start.position = CMP(0.5);
     
-    CCMenuItem *restart = [CCMenuItemFont itemWithString:@"Restart" block:^(id sender) {
+    //menu
+    CCMenuItemImage *back = [CCMenuItemImage itemWithNormalImage:@"back_button_N.png" selectedImage:@"back_button_P.png" block:^(id sender){
+        [[CCTextureCache sharedTextureCache] removeTextureForKey:@"pinwheel.pvr.ccz"];
+        [[CCTextureCache sharedTextureCache] removeTextureForKey:@"learn_word_bg.pvr.ccz"];
+        [[CCDirector sharedDirector] popScene];
+    }];
+    back.position = CCMP(0.1, 0.9);
+    
+    __block PGLearnWord *self_copy = self;
+    CCMenuItemImage *restart = [CCMenuItemImage itemWithNormalImage:@"restart_button_N.png" selectedImage:@"restart_button_P.png" block:^(id sender){
         for (LetterBlock *block in self_copy->blocks)
         {
             if (block.visible)
@@ -124,9 +137,8 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
         [self_copy startGame];
     }];
     restart.position = CMP(0.9);
-    restart.color = ccGREEN;
     
-    CCMenu *menu = [CCMenu menuWithItems:start,restart, nil];
+    CCMenu *menu = [CCMenu menuWithItems:back,restart, nil];
     menu.zOrder = Z_MENU;
     menu.position = CMP(0);
     [self addChild:menu];
@@ -139,9 +151,9 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
         cpFloat radius = 5.f;
         
         // four corner
-        cpVect leftDown = cpv(0, 100);
+        cpVect leftDown = cpv(0, 0);
         cpVect leftUp = cpv(0,SCREEN_SIZE.height + 100);
-        cpVect rightDown = cpv(SCREEN_SIZE.width, 100);
+        cpVect rightDown = cpv(SCREEN_SIZE.width, 0);
         cpVect rightUp = cpv(SCREEN_SIZE.width, SCREEN_SIZE.height+100);
         
         cpBody *groundBody = cpBodyNewStatic();
@@ -165,6 +177,8 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
     [self addChild:debugNode z:Z_PHYSICS_DEBUG];
     
     [self dropBlocks];
+    
+    self.currentIndex = 0;
     
     [self scheduleUpdate];
     [self setTouchEnabled:YES];
@@ -197,6 +211,8 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
 - (void) onEnter
 {
     [super onEnter];
+    
+    [self playWordAtIndex:_currentIndex];
 }
 
 - (void) update:(ccTime)delta
@@ -226,7 +242,7 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
     ccColor3B color = [PGColor randomBrightColor];
     for (char l='A';l<='Z';l++)
     {
-        LetterBlock *block = [LetterBlock blockWithSize:CGSizeMake(50, 50) letter:l];
+        LetterBlock *block = [LetterBlock blockWithSize:CGSizeMake(60, 60) letter:l];
         block.color = color;
         block.zOrder = Z_BLOCKS;
         [self addChild:block];
@@ -252,8 +268,8 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
         [gradientProgress removeFromParentAndCleanup:YES];
     }
     
-    wordLabel = [CCLabelBMFont labelWithString:self.currentWord fntFile:@"Arial-Black.fnt"];
-    wordLabel.position = CCMP(0.5, 0.6);
+    wordLabel = [CCLabelBMFont labelWithString:self.currentWord fntFile:@"GungSeo.fnt"];
+    wordLabel.position = CCMP(0.5, 0.55);
     wordLabel.zOrder = Z_WORD;
     [self addChild:wordLabel];
     

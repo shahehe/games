@@ -10,3 +10,5 @@
 #import "CCNode.h"
 
 void placeNodeCenterOfParent(CCNode *node,CCNode *parent);
+
+void setNodeFitSize(CCNode *node,CGSize size,BOOL scaleIn);

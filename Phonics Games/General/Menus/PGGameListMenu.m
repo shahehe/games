@@ -48,7 +48,7 @@
     learnWord.color = ccWHITE;
     
     CCMenuItemFont *searchWord = [CCMenuItemFont itemWithString:@"Search Word" block:^(id sender) {
-        [[CCDirector sharedDirector] pushScene:[PGSearchWord gameWithWords:w panelSize:CGSizeMake(630, 720) gridSize:CGSizeMake(90, 90)]];
+        [[CCDirector sharedDirector] pushScene:[PGSearchWord gameWithWords:w panelSize:CGSizeMake(640, 640) gridSize:CGSizeMake(80, 80)]];
     }];
     searchWord.color = ccWHITE;
     

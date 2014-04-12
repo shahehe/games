@@ -6,11 +6,11 @@
 //  Copyright 2014年 yiplee. All rights reserved.
 //
 
-static char* fontFile = "Arial-Black.fnt";
+static char* fontFile = "GungSeo.fnt";
 
 #import "LetterBlock.h"
 #import "CCNodeHelper.h"
-
+#import "PGColor.h"
 #import "UtilsMacro.h"
 
 @interface LetterBlock ()
@@ -62,14 +62,19 @@ static char* fontFile = "Arial-Black.fnt";
     return self;
 }
 
+- (void) setColor:(ccColor3B)color
+{
+    [super setColor:color];
+    
+    letterLabel.color = [PGColor reverseColor:self.color];
+}
+
 - (void) dealloc
 {
     cpShapeFree(self.shape);
     cpBodyFree(self.CPBody);
     
     [super dealloc];
-    
-    SLLog(@"letterBlock:dealloc");
 }
 
 - (void) setLetter:(char)letter
@@ -82,6 +87,9 @@ static char* fontFile = "Arial-Black.fnt";
         letterLabel = [CCLabelBMFont labelWithString:@" " fntFile:font];
         [self addChild:letterLabel];
         placeNodeCenterOfParent(letterLabel, self);
+        
+        CGSize fitSize = CGRectInset(self.boundingBox, 5, 5).size;
+        setNodeFitSize(letterLabel, fitSize, YES);
     }
     
     NSString *letterStr = [NSString stringWithFormat:@"%c",_letter];

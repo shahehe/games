@@ -69,6 +69,15 @@
 {
     self = [super init];
     
+    // background
+    RGB565
+    CCSprite *bg = [CCSprite spriteWithFile:@"search_word_bg.pvr.ccz"];
+    PIXEL_FORMAT_DEFAULT
+    bg.position = CMP(0.5);
+    bg.scaleX = SCREEN_WIDTH / bg.contentSize.width;
+    bg.scaleY = SCREEN_HEIGHT / bg.contentSize.height;
+    [self addChild:bg z:0];
+    
     _gameName = [@"Search Word" copy];
 //    self.words = words;
     
@@ -76,21 +85,32 @@
     row = pSize.height / gSize.height;
     line = pSize.width / gSize.width;
     
-    letterSize = MIN(gridSize.width, gridSize.height) - 20;
+    letterSize = MIN(gridSize.width, gridSize.height) - 10;
     
     wordPanel = [CCNode node];
     {
         CGSize p_size = CGSizeMake(line*gSize.width, row*gSize.height);
         wordPanel.contentSize = p_size;
         wordPanel.anchorPoint = ccp(0.5, 0.5);
-        wordPanel.position = CCMP((SCREEN_WIDTH-p_size.width/2-50)/SCREEN_WIDTH, 0.5);
+        wordPanel.position = CCMP((SCREEN_WIDTH-p_size.width/2-50)/SCREEN_WIDTH, 0.45);
         [self addChild:wordPanel z:1];
     }
     
+    RGB565
+    CCSprite *letterPanel = [CCSprite spriteWithFile:@"search_word_letter_panel.pvr.ccz"];
+    PIXEL_FORMAT_DEFAULT
+    letterPanel.position = wordPanel.position;
+    letterPanel.scaleX = (wordPanel.contentSize.width + 30)/letterPanel.contentSize.width;
+    letterPanel.scaleY = (wordPanel.contentSize.height+ 30)/letterPanel.contentSize.height;
+    letterPanel.zOrder = 0;
+    [self addChild:letterPanel];
+    
     gridBatch = [CCSpriteBatchNode batchNodeWithFile:@"blockTexture.png"];
+    [gridBatch retain];
     [wordPanel addChild:gridBatch z:1];
     
     letterLabelBatch = [CCSpriteBatchNode batchNodeWithFile:@"FrankfurterStd.png"];
+    [letterLabelBatch retain];
     [wordPanel addChild:letterLabelBatch z:3];
     
     // audio
@@ -103,6 +123,29 @@
     wordResults = [[NSMutableDictionary alloc] init];
     wordHints = [[NSMutableDictionary alloc] init];
     
+    //menu
+    CCMenuItemImage *back = [CCMenuItemImage itemWithNormalImage:@"back_button_N.png" selectedImage:@"back_button_P.png" block:^(id sender){
+        [[CCTextureCache sharedTextureCache] removeTextureForKey:@"search_word_bg.pvr.ccz"];
+        [[CCTextureCache sharedTextureCache] removeTextureForKey:@"search_word_letter_panel.pvr.ccz"];
+        [[CCTextureCache sharedTextureCache] removeTextureForKey:@"search_word_word_panel.pvr.ccz"];
+        [[CCDirector sharedDirector] popScene];
+    }];
+    back.position = CCMP(0.05, 0.92);
+    
+    __block PGSearchWord *self_copy = self;
+    CCMenuItemImage *restart = [CCMenuItemImage itemWithNormalImage:@"restart_button_N.png" selectedImage:@"restart_button_P.png" block:^(id sender) {
+        [self_copy->wordPanel removeAllChildren];
+        [self_copy->wordPanel addChild:self_copy->gridBatch z:1];
+        [self_copy->wordPanel addChild:self_copy->letterLabelBatch z:3];
+        
+        self_copy.currentIndex = 0;
+        [self_copy playWordAtIndex:0];
+    }];
+    restart.position = CCMP(0.95, 0.92);
+    
+    CCMenu *menu = [CCMenu menuWithItems:back,restart, nil];
+    menu.position = CGPointZero;
+    [self addChild:menu z:4];
     
     [self prepareWordPanelWithWords:words];
     
@@ -119,6 +162,9 @@
 {
     [_gameName release];
     [_words release];
+    
+    [letterLabelBatch release];
+    [gridBatch release];
     
     [audioPlayer release];
     [timer release];
@@ -328,7 +374,11 @@
             LetterGrid *_letterGrid = [LetterGrid gridWithSize:gridSize letter:letters[i][j]];
             if ((i+j) % 2 == 0)
             {
-                _letterGrid.color = ccc3(209,245,130);
+                _letterGrid.color = ccc3(146,205,201);
+            }
+            else
+            {
+                _letterGrid.color = ccc3(243, 232, 190);
             }
             _letterGrid.gridIndex = ccp(i, j);
             _letterGrid.tag = i * row + j;
@@ -374,7 +424,7 @@
         }
         currentLine = [CCLinePro lineFromStartPoint:t_positin toEndPoint:t_positin withWidth:letterSize];
         currentLine.color = highlightedColor;
-        currentLine.opacity = 255*0.6;
+        currentLine.opacity = 255*0.8;
         [wordPanel addChild:currentLine z:2];
         
         [self letterFormIndex:firstIndex toIndex:lastIndex];
@@ -530,11 +580,19 @@
     }
     else
     {
+        RGBA4444
+        CCSprite *wordLabelBg = [CCSprite spriteWithFile:@"search_word_word_panel.pvr.ccz"];
+        PIXEL_FORMAT_DEFAULT
+        wordLabelBg.position = CCMP(0.15, 0.5);
+        wordLabelBg.zOrder = 0;
+        [self addChild:wordLabelBg];
+        
         NSString *_fontName = @"DENNE|Sketchy";
         NSUInteger _fontSize = 80;
         wordLabel = [GradientLabel LabelWithString:_word FontName:_fontName FontSize:_fontSize BackgroundColor:ccWHITE CoverColor:highlightedColor];
-        wordLabel.position = CCMP(0.2, 0.5);
-        [self addChild:wordLabel];
+        wordLabel.color = ccBLACK;
+        wordLabel.position = ccpCompMult(ccpFromSize(wordLabelBg.contentSize),ccp(0.48, 0.2));
+        [wordLabelBg addChild:wordLabel z:1];
     }
     
     [audioPlayer stop];
