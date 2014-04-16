@@ -54,6 +54,8 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
     CDLongAudioSource *audioPlayer;
     
     PGTimer *timer;
+    
+    CCSprite *pinwheel1,*pinwheel2;
 }
 
 @property (nonatomic,assign) NSUInteger currentIndex;
@@ -62,12 +64,9 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
 
 @implementation PGLearnWord
 
-+ (CCScene *) gameWithWords:(NSArray *)words
++ (instancetype) gameWithWords:(NSArray *)words
 {
-    CCScene *scene = [CCScene node];
-    CCLayer *layer = [[[[self class] alloc] initWithWords:words] autorelease];
-    [scene addChild:layer];
-    return scene;
+    return [[[[self class] alloc] initWithWords:words] autorelease];
 }
 
 - (id) initWithWords:(NSArray *)words
@@ -92,16 +91,16 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
     
     RGBA4444
     {
-        CCSprite *pinwheel = [CCSprite spriteWithFile:@"pinwheel.pvr.ccz"];
-        pinwheel.position = CCMP(0.197, 0.802);
-        [self addChild:pinwheel];
-        [pinwheel runAction:[CCRepeatForever actionWithAction:[CCRotateBy actionWithDuration:5 angle:360]]];
+        pinwheel1 = [CCSprite spriteWithFile:@"pinwheel.pvr.ccz"];
+        pinwheel1.position = CCMP(0.197, 0.802);
+        [self addChild:pinwheel1];
+//        [pinwheel runAction:[CCRepeatForever actionWithAction:[CCRotateBy actionWithDuration:5 angle:360]]];
     }
     {
-        CCSprite *pinwheel = [CCSprite spriteWithFile:@"pinwheel.pvr.ccz"];
-        pinwheel.position = CCMP(0.805, 0.802);
-        [self addChild:pinwheel];
-        [pinwheel runAction:[CCRepeatForever actionWithAction:[CCRotateBy actionWithDuration:5 angle:360]]];
+        pinwheel2 = [CCSprite spriteWithFile:@"pinwheel.pvr.ccz"];
+        pinwheel2.position = CCMP(0.805, 0.802);
+        [self addChild:pinwheel2];
+//        [pinwheel runAction:[CCRepeatForever actionWithAction:[CCRotateBy actionWithDuration:5 angle:360]]];
     }
     PIXEL_FORMAT_DEFAULT
     
@@ -123,15 +122,15 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
     
     __block PGLearnWord *self_copy = self;
     CCMenuItemImage *restart = [CCMenuItemImage itemWithNormalImage:@"restart_button_N.png" selectedImage:@"restart_button_P.png" block:^(id sender){
-        for (LetterBlock *block in self_copy->blocks)
-        {
-            if (block.visible)
-                [block removeFromSpace:self_copy->_space];
-            [block removeFromParentAndCleanup:YES];
-        }
+//        for (LetterBlock *block in self_copy->blocks)
+//        {
+//            if (block.visible)
+//                [block removeFromSpace:self_copy->_space];
+//            [block removeFromParentAndCleanup:YES];
+//        }
         
-        [self_copy->blocks removeAllObjects];
-        [self_copy dropBlocks];
+//        [self_copy->blocks removeAllObjects];
+        [self_copy setGameLevel:self_copy->_gameLevel];
         
         self_copy.currentIndex = 0;
         [self_copy startGame];
@@ -176,8 +175,6 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
     debugNode.visible = NO;
     [self addChild:debugNode z:Z_PHYSICS_DEBUG];
     
-    [self dropBlocks];
-    
     self.currentIndex = 0;
     
     [self scheduleUpdate];
@@ -208,9 +205,9 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
     [super dealloc];
 }
 
-- (void) onEnter
+- (void) onEnterTransitionDidFinish
 {
-    [super onEnter];
+    [super onEnterTransitionDidFinish];
     
     [self playWordAtIndex:_currentIndex];
 }
@@ -226,7 +223,25 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
 	}
     
     // game logic
+    static int tap = 0;
+    if (tap > 8)
+    {
+        for (LetterBlock *block in blocks)
+        {
+            if (block.parent)
+                continue;
+            
+            block.position = ccp(SCREEN_WIDTH*CCRANDOM_0_1(), SCREEN_HEIGHT+50*CCRANDOM_0_1());
+            [self addChild:block];
+            [block addToSpace:_space];
+            
+            break;
+        }
+        
+        tap = 0;
+    }
     
+    tap += 1;
 }
 
 - (NSString *) currentWord
@@ -237,21 +252,41 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
     return nil;
 }
 
-- (void) dropBlocks
+- (void) setGameLevel:(LearnWordLevel)gameLevel
 {
-    ccColor3B color = [PGColor randomBrightColor];
-    for (char l='A';l<='Z';l++)
+    _gameLevel = gameLevel;
+    
+    for (LetterBlock *block in blocks)
     {
+        if (block.parent && block.visible)
+        {
+            [block removeFromSpace:_space];
+        }
+        [block removeFromParentAndCleanup:YES];
+    }
+    
+    [blocks removeAllObjects];
+    
+    ccColor3B color = [PGColor randomBrightColor];
+    for (NSString *word in self.words)
+    {
+        char letter = [[word uppercaseString] characterAtIndex:0];
+        LetterBlock *block = [LetterBlock blockWithSize:CGSizeMake(60, 60) letter:letter];
+        block.color = color;
+        block.zOrder = Z_BLOCKS;
+        
+        cpShapeSetLayers(block.shape, PhysicsBlockLayers);
+        [blocks addObject:block];
+    }
+    
+    NSInteger count = _gameLevel * 10;
+    while ((count--) >= 0) {
+        char l = arc4random_uniform('Z'-'A'+1) + 'A';
         LetterBlock *block = [LetterBlock blockWithSize:CGSizeMake(60, 60) letter:l];
         block.color = color;
         block.zOrder = Z_BLOCKS;
-        [self addChild:block];
-        
-        block.position = ccp(SCREEN_WIDTH*CCRANDOM_0_1(), SCREEN_HEIGHT+50*CCRANDOM_0_1());
         
         cpShapeSetLayers(block.shape, PhysicsBlockLayers);
-        [block addToSpace:_space];
-        
         [blocks addObject:block];
     }
 }
@@ -344,6 +379,11 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
     }];
     CCSequence *seq = [CCSequence actions:p,p_done, nil];
     [gradientProgress runAction:seq];
+    
+    [pinwheel1 stopAllActions];
+    [pinwheel2 stopAllActions];
+    [pinwheel1 runAction:[CCRotateBy actionWithDuration:2 angle:360]];
+    [pinwheel2 runAction:[CCRotateBy actionWithDuration:2 angle:360]];
 }
 
 - (void) finishGame

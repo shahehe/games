@@ -93,7 +93,7 @@ static char* fontFile = "GungSeo.fnt";
     }
     
     NSString *letterStr = [NSString stringWithFormat:@"%c",_letter];
-    letterLabel.string = [letterStr uppercaseString];
+    letterLabel.string = letterStr;
 }
 
 - (void) setPhysics

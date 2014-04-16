@@ -11,13 +11,21 @@
 
 #import "SimpleAudioEngine.h"
 
+typedef enum : NSUInteger {
+    LearnWordLevelEasy = 1,
+    LearnWordLevelNormal,
+    LearnWordLevelHard
+} LearnWordLevel;
+
 @interface PGLearnWord : CCLayer<CDLongAudioSourceDelegate>
 
 @property (nonatomic,copy,readonly) NSString *gameName;
 @property (nonatomic,retain) NSArray *words;
 @property (nonatomic,copy,readonly) NSString *currentWord;
 
-+ (CCScene *) gameWithWords:(NSArray*)words;
+@property (nonatomic,assign) LearnWordLevel gameLevel;
+
++ (instancetype) gameWithWords:(NSArray*)words;
 - (id) initWithWords:(NSArray*)words;
 
 @end

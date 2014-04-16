@@ -43,7 +43,11 @@
     [CCMenuItemFont setFontName:font];
     
     CCMenuItemFont *learnWord = [CCMenuItemFont itemWithString:@"Learn Word" block:^(id sender) {
-        [[CCDirector sharedDirector] pushScene:[PGLearnWord gameWithWords:w]];
+        PGLearnWord *game = [PGLearnWord gameWithWords:w];
+        game.gameLevel = LearnWordLevelNormal;
+        CCScene *scene = [CCScene node];
+        [scene addChild:game];
+        [[CCDirector sharedDirector] pushScene:scene];
     }];
     learnWord.color = ccWHITE;
     
