@@ -17,6 +17,8 @@
 
 #import "SimpleAudioEngine.h"
 
+#import "PGManager.h"
+
 @implementation BubbleGameLayer
 {
     // chipmunk space
@@ -75,6 +77,8 @@
 {
     CCLOG(@"bubble dealloc");
     
+    [_gameName release];
+    
     for (NSString *_word in _words)
     {
         [[SimpleAudioEngine sharedEngine] unloadEffect:[self audioFileNameWithWord:_word]];
@@ -108,6 +112,8 @@
 {
     if (self = [super init])
     {
+        _gameName = [@"Bubble" copy];
+        
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         CGPoint size = ccpFromSize(screenSize);
         
@@ -699,6 +705,8 @@ static const int TICKS_PER_SECOND = 120;
 - (void) gameDone
 {
     CCLOG(@"game done");
+    
+    [[PGManager sharedManager] finishGame:self.gameName];
     
     BubbleGameDoneLayer *layer = [[[BubbleGameDoneLayer alloc] initWithBackScene:(CCScene*)self] autorelease];
     layer.score = _score;

@@ -11,6 +11,8 @@
 
 #import "PGGameListMenu.h"
 
+#import "PGManager.h"
+
 @interface CCSprite (stageLetter)
 
 - (void) addLetter:(char)letter;
@@ -116,6 +118,13 @@
             CGPoint pos = ccpAdd(start, ccpCompMult(direction, ccp(x, y)));
             item.position = ccpCompMult(size_p, pos);
             [items addObject:item];
+            
+            item.isEnabled = [[PGManager sharedManager] isActiveForLetter:letter];
+            if (item.isEnabled)
+            {
+                [[PGManager sharedManager] setNewestActiveLetter:letter];
+            }
+            
             letter++;
         }
         
@@ -145,9 +154,14 @@
             CGPoint pos = ccpAdd(start, ccpCompMult(direction, ccp(x, y)));
             item.position = ccpCompMult(size_p, pos);
             [items addObject:item];
-            letter++;
             
-            item.isEnabled = NO;
+            item.isEnabled = [[PGManager sharedManager] isActiveForLetter:letter];
+            if (item.isEnabled)
+            {
+                [[PGManager sharedManager] setNewestActiveLetter:letter];
+            }
+            
+            letter++;
         }
         
         CCMenu *_menu = [CCMenu menuWithArray:items];
@@ -178,6 +192,7 @@
     CCMenuItemSprite *item = [CCMenuItemSprite itemWithNormalSprite:normal selectedSprite:pressed disabledSprite:locked block:^(id sender){
         SLLog(@"%c",letter);
         [[CCDirector sharedDirector] replaceScene:[PGGameListMenu menuWithLetter:letter]];
+        [[PGManager sharedManager] setCurrentLetter:letter];
     }];
     
     return item;

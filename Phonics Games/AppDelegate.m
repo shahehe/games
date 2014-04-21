@@ -11,6 +11,8 @@
 #import "AppDelegate.h"
 #import "IntroLayer.h"
 
+#import "PGManager.h"
+
 @implementation MyNavigationController
 
 // The available orientations should be defined in the Info.plist file.
@@ -48,6 +50,9 @@
 		// Add the first scene to the stack. The director will draw it immediately into the framebuffer. (Animation is started automatically when the view is displayed.)
 		// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
 		[director runWithScene: [IntroLayer scene]];
+        
+        // init game manager
+        [PGManager sharedManager];
 	}
 }
 @end
@@ -160,6 +165,8 @@
 {
 	if( [navController_ visibleViewController] == director_ )
 		[director_ stopAnimation];
+    
+    [[PGManager sharedManager] synchronizeData];
 }
 
 -(void) applicationWillEnterForeground:(UIApplication*)application
@@ -171,6 +178,7 @@
 // application will be killed
 - (void)applicationWillTerminate:(UIApplication *)application
 {
+    [[PGManager sharedManager] synchronizeData];
 	CC_DIRECTOR_END();
 }
 

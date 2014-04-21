@@ -21,6 +21,7 @@ typedef enum : NSUInteger {
 
 - (id) initWithWords:(NSArray*)words;
 
+@property (nonatomic,copy,readonly) NSString *gameName;
 @property (nonatomic,assign) BubbleLevel gameLevel;
 
 - (void) backToMenu;

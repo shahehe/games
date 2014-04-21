@@ -17,6 +17,8 @@
 #import "GradientLabel.h"
 #import "PGColor.h"
 
+#import "PGManager.h"
+
 @interface PGSearchWord ()
 {
     CCNode *wordPanel;
@@ -78,7 +80,7 @@
     bg.scaleY = SCREEN_HEIGHT / bg.contentSize.height;
     [self addChild:bg z:0];
     
-    _gameName = [@"Search Word" copy];
+    _gameName = [@"SearchWord" copy];
 //    self.words = words;
     
     gridSize = gSize;
@@ -629,6 +631,7 @@
 - (void) finishGame
 {
     SLLog(@"finish game with result:%@",wordResults.description);
+    [[PGManager sharedManager] finishGame:self.gameName];
 }
 
 - (NSString *) audioFileOfWord:(NSString*)word

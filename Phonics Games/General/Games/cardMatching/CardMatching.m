@@ -8,6 +8,8 @@
 
 #import "CardMatching.h"
 
+#import "PGManager.h"
+
 @implementation CardMatching
 
 + (CCScene*) gameWithWords:(NSArray *)words
@@ -22,6 +24,8 @@
 {
     if (self = [super init])
     {
+        _gameName = [@"CardMatch" copy];
+        
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"cardMatching.plist"];
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"cardMatching2.plist"];
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"cardsSheet.plist"];
@@ -138,6 +142,8 @@
     [gameDoneLayer prepareWithScore:gameLayer.score andTime:gameLayer.time];
     [mpLayer switchTo:GameDoneLayer];
     [gameDoneLayer showWithDuration:0.4f];
+    
+    [[PGManager sharedManager] finishGame:self.gameName];
 }
 
 - (void) backToMainMenu
@@ -163,6 +169,7 @@
 - (void) dealloc
 {
     CCLOG(@"card match:dealloc");
+    [_gameName release];
     [super dealloc];
 }
 

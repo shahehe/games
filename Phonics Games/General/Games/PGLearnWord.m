@@ -34,6 +34,8 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
 #import "PGColor.h"
 #import "PGTimer.h"
 
+#import "PGManager.h"
+
 @interface PGLearnWord ()
 {
     // physic
@@ -74,7 +76,7 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
     self = [super init];
     
     NSAssert(words.count > 0, @"words can't be empty or nil");
-    _gameName = [@"learn Word" copy];
+    _gameName = [@"LearnWord" copy];
     self.words = words;
     _currentIndex = NSNotFound;
     
@@ -389,6 +391,7 @@ static const cpLayers PhysicsBlockLayers = CP_ALL_LAYERS;
 - (void) finishGame
 {
     SLLog(@"finish game");
+    [[PGManager sharedManager] finishGame:self.gameName];
 }
 
 - (NSString *) audioFileForWord:(NSString*)word

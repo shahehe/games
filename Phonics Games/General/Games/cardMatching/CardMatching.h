@@ -33,6 +33,8 @@ typedef enum
     CardMatchingGameOverLayer *gameOverLayer;
 }
 
+@property (nonatomic,copy,readonly) NSString *gameName;
+
 + (CCScene*) gameWithWords:(NSArray*)words;
 
 - (void) pause;
