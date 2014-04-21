@@ -10,4 +10,18 @@
 
 @interface PGManager : NSObject
 
+@property(nonatomic,readwrite) char newestActiveLetter;
+@property(nonatomic,readwrite) char currentLetter;
+
++ (instancetype) sharedManager;
+
+- (BOOL) isActiveForLetter:(char)letter;
+
+- (void) activeLetter:(char)letter;
+- (void) finishGame:(NSString*)gameName;
+
+- (BOOL) isLetterPassed:(char)letter;
+
+- (void) synchronizeData;
+
 @end

@@ -8,6 +8,111 @@
 
 #import "PGManager.h"
 
+#import "UtilsMacro.h"
+
 @implementation PGManager
+
++ (instancetype) sharedManager
+{
+    static PGManager *instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[PGManager alloc] init];
+    });
+    
+    return instance;
+}
+
+- (id) init
+{
+    self = [super init];
+    NSAssert(self, @"Game Manager failed launch");
+    
+    // letter A active default
+    NSDictionary *gameStatus = @{@"LearnWord" :[NSNumber numberWithBool:NO],
+                                 @"SearchWord":[NSNumber numberWithBool:NO],
+                                 @"CardMatch" :[NSNumber numberWithBool:NO],
+                                 @"Bubble"    :[NSNumber numberWithBool:NO]};
+    [[NSUserDefaults standardUserDefaults] \
+     registerDefaults:@{@"A": gameStatus}];
+    
+    return self;
+}
+
+- (BOOL) isActiveForLetter:(char)letter
+{
+    NSString *l = [NSString stringWithFormat:@"%c",letter];
+    if ([[NSUserDefaults standardUserDefaults] dictionaryForKey:l])
+    {
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (void) activeLetter:(char)letter
+{
+    if (letter > 'Z') return;
+    NSDictionary *gameStatus = @{@"LearnWord" :[NSNumber numberWithBool:NO],
+                                 @"SearchWord":[NSNumber numberWithBool:NO],
+                                 @"CardMatch" :[NSNumber numberWithBool:NO],
+                                 @"Bubble"    :[NSNumber numberWithBool:NO]};
+    NSString *l = [NSString stringWithFormat:@"%c",letter];
+    [[NSUserDefaults standardUserDefaults] \
+     registerDefaults:@{l: gameStatus}];
+}
+
+- (void) finishGame:(NSString *)gameName
+{
+    NSString *l = [NSString stringWithFormat:@"%c",_currentLetter];
+    NSMutableDictionary *data = [[[[NSUserDefaults standardUserDefaults]\
+                                    dictionaryForKey:l]\
+                                    mutableCopy]\
+                                    autorelease ];
+    if (!data)
+    {
+        SLLog(@"WARNING:finsh a unactive game:%@",gameName);
+        return;
+    }
+    
+    [data setValue:[NSNumber numberWithBool:YES] forKey:gameName];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:l];
+    
+    if ([self isLetterPassed:_currentLetter])
+    {
+        [self activeLetter:_currentLetter++];
+    }
+}
+
+- (BOOL) isLetterPassed:(char)letter
+{
+    BOOL passed = YES;
+    NSString *l = [NSString stringWithFormat:@"%c",letter];
+    NSDictionary *data = [[NSUserDefaults standardUserDefaults] dictionaryForKey:l];
+    
+    if (data)
+    {
+        for (NSNumber *n in [data allKeys])
+        {
+            if (![n boolValue])
+            {
+                passed = NO;
+                break;
+            }
+        }
+    }
+    else
+    {
+        passed = NO;
+    }
+    
+    return passed;
+}
+
+- (void) synchronizeData
+{
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 
 @end
