@@ -13,7 +13,11 @@
 @property(nonatomic,readwrite) char newestActiveLetter;
 @property(nonatomic,readwrite) char currentLetter;
 
+@property(nonatomic,readwrite) NSUInteger gameLevel;
+
 + (instancetype) sharedManager;
+
+- (NSArray*) wordsForLetter:(char)letter;
 
 - (BOOL) isActiveForLetter:(char)letter;
 

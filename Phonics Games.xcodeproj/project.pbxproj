@@ -129,6 +129,10 @@
 		84ACDDC8191A97B00054AB12 /* zucchini-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 84ACDD50191A97B00054AB12 /* zucchini-ipad.png */; };
 		84ACDDC9191A97B00054AB12 /* zucchini-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 84ACDD51191A97B00054AB12 /* zucchini-ipadhd.png */; };
 		84ACDDCB191A98450054AB12 /* cardmatchWordList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84ACDDCA191A98450054AB12 /* cardmatchWordList.plist */; };
+		84ACDDD0191B65F00054AB12 /* menu_letter_list-ipad.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84ACDDCC191B65F00054AB12 /* menu_letter_list-ipad.plist */; };
+		84ACDDD1191B65F00054AB12 /* menu_letter_list-ipad.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 84ACDDCD191B65F00054AB12 /* menu_letter_list-ipad.pvr.ccz */; };
+		84ACDDD2191B65F00054AB12 /* menu_letter_list-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84ACDDCE191B65F00054AB12 /* menu_letter_list-ipadhd.plist */; };
+		84ACDDD3191B65F00054AB12 /* menu_letter_list-ipadhd.pvr.ccz in Resources */ = {isa = PBXBuildFile; fileRef = 84ACDDCF191B65F00054AB12 /* menu_letter_list-ipadhd.pvr.ccz */; };
 		84AF9EA418F1318C00678CD1 /* CCLabelBMFontOnBacthNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AF9EA218F1318C00678CD1 /* CCLabelBMFontOnBacthNode.m */; };
 		84AF9EA718F13F8300678CD1 /* CCLinePro.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AF9EA518F13F8300678CD1 /* CCLinePro.m */; };
 		84AF9EAA18F14D7000678CD1 /* GradientLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AF9EA818F14D7000678CD1 /* GradientLabel.m */; };
@@ -608,6 +612,10 @@
 		84ACDD50191A97B00054AB12 /* zucchini-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zucchini-ipad.png"; sourceTree = "<group>"; };
 		84ACDD51191A97B00054AB12 /* zucchini-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zucchini-ipadhd.png"; sourceTree = "<group>"; };
 		84ACDDCA191A98450054AB12 /* cardmatchWordList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cardmatchWordList.plist; sourceTree = "<group>"; };
+		84ACDDCC191B65F00054AB12 /* menu_letter_list-ipad.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "menu_letter_list-ipad.plist"; sourceTree = "<group>"; };
+		84ACDDCD191B65F00054AB12 /* menu_letter_list-ipad.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "menu_letter_list-ipad.pvr.ccz"; sourceTree = "<group>"; };
+		84ACDDCE191B65F00054AB12 /* menu_letter_list-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "menu_letter_list-ipadhd.plist"; sourceTree = "<group>"; };
+		84ACDDCF191B65F00054AB12 /* menu_letter_list-ipadhd.pvr.ccz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "menu_letter_list-ipadhd.pvr.ccz"; sourceTree = "<group>"; };
 		84AF9EA218F1318C00678CD1 /* CCLabelBMFontOnBacthNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLabelBMFontOnBacthNode.m; sourceTree = "<group>"; };
 		84AF9EA318F1318C00678CD1 /* CCLabelBMFontOnBacthNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLabelBMFontOnBacthNode.h; sourceTree = "<group>"; };
 		84AF9EA518F13F8300678CD1 /* CCLinePro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLinePro.m; sourceTree = "<group>"; };
@@ -1679,6 +1687,10 @@
 				84B5636218F1B1A400A9B99B /* menu_letter-ipadhd.plist */,
 				84B5636318F1B1A400A9B99B /* menu_letter-ipad.pvr.ccz */,
 				84B5636418F1B1A400A9B99B /* menu_letter-ipad.plist */,
+				84ACDDCC191B65F00054AB12 /* menu_letter_list-ipad.plist */,
+				84ACDDCD191B65F00054AB12 /* menu_letter_list-ipad.pvr.ccz */,
+				84ACDDCE191B65F00054AB12 /* menu_letter_list-ipadhd.plist */,
+				84ACDDCF191B65F00054AB12 /* menu_letter_list-ipadhd.pvr.ccz */,
 				84B5636518F1B1A400A9B99B /* menu_farm_bg.pvr.ccz */,
 				84B3BEEE18F9307500DE06A7 /* back_button_N-ipadhd.png */,
 				84B3BEEF18F9307500DE06A7 /* game_goal_panel-ipad.png */,
@@ -2333,6 +2345,7 @@
 				84E9D9C718EFE73500EEAA91 /* van.caf in Resources */,
 				84ACDD8E191A97B00054AB12 /* key-ipad.png in Resources */,
 				84ACDD79191A97B00054AB12 /* gorilla-ipadhd.png in Resources */,
+				84ACDDD0191B65F00054AB12 /* menu_letter_list-ipad.plist in Resources */,
 				84B3BF1518F97F0800DE06A7 /* GungSeo-ipadhd.png in Resources */,
 				84ACDD81191A97B00054AB12 /* house-ipadhd.png in Resources */,
 				84E9D9C318EFE73500EEAA91 /* sat.caf in Resources */,
@@ -2495,6 +2508,7 @@
 				84ACDD7C191A97B00054AB12 /* hen-ipad.png in Resources */,
 				84B8459218F31CED00A9DA12 /* cardMatching2-ipad.png in Resources */,
 				84B5636918F1B1A400A9B99B /* menu_stage-ipad.pvr.ccz in Resources */,
+				84ACDDD1191B65F00054AB12 /* menu_letter_list-ipad.pvr.ccz in Resources */,
 				84DBB53D18EAD19A00E7F8C7 /* Arial-Black-ipad.png in Resources */,
 				84B845B818F31DA600A9DA12 /* button.caf in Resources */,
 				84B5421F18F3DB9A001EEDBD /* tip_letter-ipadhd.plist in Resources */,
@@ -2508,6 +2522,7 @@
 				84ACDD7E191A97B00054AB12 /* horse-ipad.png in Resources */,
 				84ACDD62191A97B00054AB12 /* deer-ipad.png in Resources */,
 				84E9D9BA18EFE73500EEAA91 /* nag.caf in Resources */,
+				84ACDDD2191B65F00054AB12 /* menu_letter_list-ipadhd.plist in Resources */,
 				84ACDDC2191A97B00054AB12 /* zigzag-ipad.png in Resources */,
 				84B3BF1318F97F0800DE06A7 /* GungSeo-ipad.fnt in Resources */,
 				84B3BF1418F97F0800DE06A7 /* GungSeo-ipad.png in Resources */,
@@ -2587,6 +2602,7 @@
 				84ACDDA3191A97B00054AB12 /* pants-ipadhd.png in Resources */,
 				84B541F718F3DB9A001EEDBD /* Lithos_pro_green-ipad.fnt in Resources */,
 				84B5421318F3DB9A001EEDBD /* game_bg_left-ipad.png in Resources */,
+				84ACDDD3191B65F00054AB12 /* menu_letter_list-ipadhd.pvr.ccz in Resources */,
 				84B8459518F31CED00A9DA12 /* cardsSheet-ipad.plist in Resources */,
 				84E9D9B318EFE73500EEAA91 /* lad.caf in Resources */,
 				84F0330F18E9B44D0097553C /* Images.xcassets in Resources */,

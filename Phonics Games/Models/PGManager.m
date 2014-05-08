@@ -39,6 +39,12 @@
     return self;
 }
 
+// 因为现在单词列表中好多字母没有单词，先采取此下策。
+- (NSArray*) wordsForLetter:(char)letter
+{
+    return @[@"bear",@"bird",@"boat",@"bus"];
+}
+
 - (BOOL) isActiveForLetter:(char)letter
 {
     NSString *l = [NSString stringWithFormat:@"%c",letter];

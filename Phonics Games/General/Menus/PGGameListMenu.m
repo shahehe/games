@@ -17,6 +17,18 @@
 #import "PGStageMenu.h"
 #import "LoadingLayer.h"
 
+#import "PGManager.h"
+
+@interface PGGameListMenu ()
+{
+    
+}
+
+@property (nonatomic,readonly) char letter;
+@property (nonatomic,copy) NSArray *words;
+
+@end
+
 @implementation PGGameListMenu
 
 + (CCScene *) menuWithLetter:(char)letter
@@ -31,77 +43,50 @@
 {
     self = [super init];
     
-    NSArray *w = @[@"cat",@"mat",@"add",@"bag",@"bat",@"man"];
+    _letter = letter;
     
-    NSString *font = @"Avenir-BlackOblique";
-    NSString *l = [NSString stringWithFormat:@"%c",letter];
-    CCLabelTTF *title = [CCLabelTTF labelWithString:l fontName:font fontSize:64];
-    title.color = ccWHITE;
-    title.position = CCMP(0.5, 0.8);
-    [self addChild:title];
+    self.words = [[PGManager sharedManager] wordsForLetter:self.letter];
     
-    [CCMenuItemFont setFontName:font];
+    RGBA4444
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"menu_letter_list.plist"];
     
-    CCMenuItemFont *learnWord = [CCMenuItemFont itemWithString:@"Learn Word" block:^(id sender) {
-        PGLearnWord *game = [PGLearnWord gameWithWords:w];
-        game.gameLevel = LearnWordLevelNormal;
-        CCScene *scene = [CCScene node];
-        [scene addChild:game];
-        [[CCDirector sharedDirector] pushScene:scene];
+    RGB565
+    CCSprite *bg = [CCSprite spriteWithFile:@"menu_farm_bg.pvr.ccz"];
+    PIXEL_FORMAT_DEFAULT
+    
+    bg.position = CCMP(0.5, 0.5);
+    bg.scaleX = SCREEN_WIDTH / bg.contentSize.width;
+    bg.scaleY = SCREEN_HEIGHT/ bg.contentSize.height;
+    [self addChild:bg z:0];
+    
+    CCMenuItemImage* backButton = [CCMenuItemImage itemWithNormalImage:@"back_button_N.png" selectedImage:@"back_button_P.png" block:^(id sender){
+        [[CCDirector sharedDirector] popScene];
     }];
-    learnWord.color = ccWHITE;
+
+    backButton.position = CCMP(0.1, 0.9);
     
-    CCMenuItemFont *searchWord = [CCMenuItemFont itemWithString:@"Search Word" block:^(id sender) {
-        [[CCDirector sharedDirector] pushScene:[PGSearchWord gameWithWords:w panelSize:CGSizeMake(640, 640) gridSize:CGSizeMake(80, 80)]];
-    }];
-    searchWord.color = ccWHITE;
-    
-    CCMenuItemFont *cardMatch = [CCMenuItemFont itemWithString:@"Card Match" block:^(id sender) {
-        [[CCDirector sharedDirector] pushScene:[CardMatching gameWithWords:w]];
-    }];
-//    cardMatch.isEnabled = NO;
-    cardMatch.color = ccWHITE;
-    
-    CCMenuItemFont *bubble = [CCMenuItemFont itemWithString:@"Bubble" block:^(id sender) {
-        
-        [[CCDirector sharedDirector] pushScene:[LoadingLayer scene]];
-        
-        dispatch_queue_t queue = dispatch_queue_create("bubble", NULL);
-        dispatch_async(queue, ^{
-            CCGLView *view = (CCGLView*)[[CCDirector sharedDirector] view];
-            EAGLContext *_auxGLcontext = [[EAGLContext alloc]
-                             initWithAPI:kEAGLRenderingAPIOpenGLES2
-                             sharegroup:[[view context] sharegroup]];
-            if( [EAGLContext setCurrentContext:_auxGLcontext] )
-            {
-                [BubbleGameLayer preloadTextures];
-                glFlush();
-                
-                [EAGLContext setCurrentContext:nil];
-            }
-            
-            [_auxGLcontext release];
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                CCScene *game = [BubbleGameLayer gameWithWords:w];
-                [[CCDirector sharedDirector] popScene];
-                [[CCDirector sharedDirector] pushScene:game];
-            });
-        });
-        
-        dispatch_release(queue);
-    }];
-    bubble.color = ccWHITE;
-    
-    CCMenuItemFont *back = [CCMenuItemFont itemWithString:@"BACK" block:^(id sender) {
-        [[CCDirector sharedDirector] replaceScene:[PGStageMenu stageMenu]];
-    }];
-    back.color = ccYELLOW;
-    
-    CCMenu *menu = [CCMenu menuWithItems:learnWord,searchWord,cardMatch,bubble,back, nil];
-    [menu alignItemsVerticallyWithPadding:20];
-    menu.position = CMP(0.5);
+    CCMenu *menu = [CCMenu menuWithItems:backButton, nil];
+    menu.position = CGPointZero;
     [self addChild:menu];
     
+    @autoreleasepool { // game menu
+        CCSprite *panel = [CCSprite spriteWithSpriteFrameName:@"menu_panel"];
+        panel.position = CCMP(0.5,0.5);
+        [self addChild:panel];
+        
+        NSArray *itemNames = @[@"Learn Word",@"Search Word",@"Card Match",@"Bubble",@"Easy",@"Normal",@"Hard"];
+        NSMutableArray *items = [NSMutableArray arrayWithCapacity:itemNames.count];
+        
+        for (NSString *name in itemNames)
+        {
+            CCLabelTTF *label = [CCLabelTTF labelWithString:name fontName:@"Avenir-BlackOblique" fontSize:20*CC_CONTENT_SCALE_FACTOR()];
+            label.color = ccWHITE;
+            [items addObject:[self buttonWithNode:label]];
+        }
+        
+        
+    }
+
     return self;
 }
 
@@ -116,10 +101,26 @@
     [super onEnterTransitionDidFinish];
 }
 
+- (CCMenuItemSprite*) buttonWithNode:(CCNode*)node
+{
+    CCSprite *N = [CCSprite spriteWithSpriteFrameName:@"menu_button_N"];
+    CCSprite *P = [CCSprite spriteWithSpriteFrameName:@"menu_button_P"];
+    
+    CCMenuItemSprite *item = [CCMenuItemSprite itemWithNormalSprite:N selectedSprite:P];
+    
+    CGPoint p = ccpFromSize(item.boundingBox.size);
+    node.position = ccpMult(p, 0.5);
+    [item addChild:node];
+    
+    return item;
+}
+
 - (void) dealloc
 {
     NSLog(@"game list : dealloc");
     [super dealloc];
+    
+    [_words release];
 }
 
 @end
