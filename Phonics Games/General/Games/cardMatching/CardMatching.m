@@ -28,7 +28,7 @@
         
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"cardMatching.plist"];
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"cardMatching2.plist"];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"cardsSheet.plist"];
+//        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"cardsSheet.plist"];
         
         CGSize size = [[CCDirector sharedDirector] winSize];
         CGFloat width = size.width;

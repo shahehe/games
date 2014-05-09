@@ -525,9 +525,10 @@ static const int TICKS_PER_SECOND = 120;
     
     [_tipLetters removeAllObjects];
     
+    CGFloat scaleRatio = 1 - MAX((_currentWordLength - 3),0) * 0.06;
     CGPoint reef_size = ccpFromSize(reef.boundingBox.size);
     CGPoint temp_pos = ccpCompMult(reef_size, ccp(0.145, 0.45));
-    CGFloat y_offset = -8;
+    CGFloat y_offset = -8 * scaleRatio;
     
     for (int i = 0;i < _currentWordLength;i++)
     {
@@ -541,12 +542,16 @@ static const int TICKS_PER_SECOND = 120;
         if (!_showTipLetter) backLetter.visible = NO;
         [reef addChild:backLetter];
         
+        backLetter.scale = scaleRatio;
+        
         CCSprite* frontLetter = [CCSprite spriteWithSpriteFrameName:frontImg];
         frontLetter.anchorPoint = ccp(0, 0.5);
         frontLetter.position = temp_pos;
         frontLetter.visible = NO;
         [reef addChild:frontLetter];
         [_tipLetters addObject:frontLetter];
+        
+        frontLetter.scale = scaleRatio;
         
         temp_pos = ccpAdd(temp_pos, ccp(backLetter.boundingBox.size.width,y_offset));
     }

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "Card.h"
+#import "PGRenderCard.h"
 #import "WordCar.h"
 #import "SimpleAudioEngine.h"
 
@@ -52,14 +52,16 @@
     
     BOOL isShow;
     
-    Card *firstCard;
-    Card *secondCard;
+    PGRenderCard *firstCard;
+    PGRenderCard *secondCard;
 }
 
 @property(nonatomic,readwrite) NSInteger totalScore;
 @property(nonatomic,readonly) NSInteger score;
 @property(nonatomic,readonly) NSInteger time;
 @property(nonatomic,readonly) NSUInteger currentLevel;
+
+@property (nonatomic,assign) NSUInteger gameLevel;
 
 + (instancetype) layerWithWords:(NSArray*)words;
 

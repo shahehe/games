@@ -191,7 +191,7 @@
     
     CCMenuItemSprite *item = [CCMenuItemSprite itemWithNormalSprite:normal selectedSprite:pressed disabledSprite:locked block:^(id sender){
         SLLog(@"%c",letter);
-        [[CCDirector sharedDirector] replaceScene:[PGGameListMenu menuWithLetter:letter]];
+        [[CCDirector sharedDirector] pushScene:[PGGameListMenu menuWithLetter:letter]];
         [[PGManager sharedManager] setCurrentLetter:letter];
     }];
     

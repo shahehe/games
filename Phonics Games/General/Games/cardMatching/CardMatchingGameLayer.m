@@ -44,7 +44,7 @@
         _totalScore = 0;
         _score = 0;
         _currentLevel = 1;
-        _time = 0; //120 seconds
+        _time = 60; //120 seconds
         
         cardFlipDuration = 0.5;
         
@@ -118,9 +118,9 @@
         //game status display area OR pencil*********************************************
 
 #pragma mark -cards
-        // card area *********************************************
+        // PGRenderCard area *********************************************
         line = 2;
-        row = 3;
+        row = 4;
         numberOfRemainCards = 0;
         cardPanel = [CCNode node];
         CGSize cardPanelSize = CGSizeMake(640, 576);
@@ -135,8 +135,8 @@
         {
             
             NSString *_word = [words objectAtIndex:i];
-            Card *card1 = [Card cardWithCardWord:_word];
-            Card *card2 = [Card cardWithCardWord:_word];
+            PGRenderCard *card1 = [PGRenderCard cardWithWord:_word config:nil];
+            PGRenderCard *card2 = [PGRenderCard cardWithWord:_word config:nil];
             [card1 setVertexZ:card1.contentSize.width*0.5f];
             [card2 setVertexZ:card1.contentSize.width*0.5f];
             card1.visible = NO;
@@ -147,7 +147,7 @@
             [cards addObject:card2];
         }
         [cards retain];
-        // card area *********************************************
+        // PGRenderCard area *********************************************
         
         //pause button
         CCSprite *button = [CCSprite spriteWithSpriteFrameName:@"pauseButton.png"];
@@ -217,8 +217,8 @@
     for (NSUInteger i = 0;i < numberOfRemainCards;i++)
     {
         NSUInteger _index = arc4random_uniform(numberOfRemainCards - i);
-        Card *_card = [cards objectAtIndex:i];
-        [_card hideDirect];
+        PGRenderCard *_card = [cards objectAtIndex:i];
+        [_card hideDirectly];
         _card.scale = 1.0f;
         _card.position = points[_index];
         _card.visible = YES;
@@ -243,8 +243,6 @@
 //  _score += _time * 10;
     [self updateScoreLabel];
     
-    _time = 60;
-    
     NSString *timeString = [NSString stringWithFormat:@"TIME %@",[NSString timeFromSecond:_time]];
     [timeLabel setString:timeString];
     
@@ -263,8 +261,15 @@
     firstCard = nil;
     secondCard = nil;
     
-    for (Card *card in cards)
+    for (PGRenderCard *card in cards)
         card.visible = NO;
+}
+
+- (void) setGameLevel:(NSUInteger)gameLevel
+{
+    _gameLevel = gameLevel;
+    
+    _time = 60 - (_gameLevel - 1) * 15;
 }
 
 - (void) hideWithDuration:(ccTime)_duration
@@ -288,7 +293,7 @@
     [pencil runAction:easePencil];
     
     
-    //card Panel
+    //PGRenderCard Panel
     CCMoveTo *movePanel = [CCMoveTo actionWithDuration:_duration position:cardPanelHidePosition];
     CCEaseOut *easePanel = [CCEaseOut actionWithAction:movePanel rate:1];
     [cardPanel runAction:easePanel];
@@ -326,7 +331,7 @@
     CCEaseOut *easePencil = [CCEaseOut actionWithAction:movePencil rate:1];
     [pencil runAction:easePencil];
     
-    //card Panel
+    //PGRenderCard Panel
     CCMoveTo *movePanel = [CCMoveTo actionWithDuration:_duration position:cardPanelShowPosition];
     CCEaseOut *easePanel = [CCEaseOut actionWithAction:movePanel rate:1];
     [cardPanel runAction:easePanel];
@@ -363,53 +368,56 @@
     firework.position = ccp(width*0.5f, height*0.75f);
     [self addChild:firework];
     
-    _currentLevel++;
-    switch (_currentLevel) {
-        case 0:
-        case 1:
-            _currentLevel = 1;
-            line = 2;row = 3;
-            break;
-        case 2:
-            line = 2;row = 4;
-            break;
-        case 3:
-            line = 3;row = 4;
-            break;
-        case 4:
-            line = 4;row = 4;
-            break;
-        case 5:
-            line = 4;row = 5;
-            break;
-        case 6:
-            line = 4;row = 6;
-            break;
-        default:
-            _currentLevel = 1;
-            line = 2;row = 3;
-            [self gameDone];
-            return;
-            break;
-    }
-    NSUInteger needWords = line*row*0.5f;
-    if (needWords > wordsCount)
-    {
-        [self gameDone];
-        return;
-    }
+//    _currentLevel++;
+//    switch (_currentLevel) {
+//        case 0:
+//        case 1:
+//            _currentLevel = 1;
+//            line = 2;row = 4;
+//            break;
+//        case 2:
+//            line = 2;row = 4;
+//            break;
+//        case 3:
+//            line = 3;row = 4;
+//            break;
+//        case 4:
+//            line = 4;row = 4;
+//            break;
+//        case 5:
+//            line = 4;row = 5;
+//            break;
+//        case 6:
+//            line = 4;row = 6;
+//            break;
+//        default:
+//            _currentLevel = 1;
+//            line = 2;row = 4;
+//            [self gameDone];
+//            return;
+//            break;
+//    }
+//    NSUInteger needWords = line*row*0.5f;
+//    if (needWords > wordsCount)
+//    {
+//        [self gameDone];
+//        return;
+//    }
+
+    [self gameDone];
+    return;
     
     // call parent to switch layer
-    CCCallBlock *hide = [CCCallBlock actionWithBlock:^{
-        [self hideWithDuration:2.0f];
-    }];
-    CCDelayTime *delay = [CCDelayTime actionWithDuration:2.05f];
-    CCCallBlock *callParent = [CCCallBlock actionWithBlock:^{
-        [(CardMatching*)self.parent.parent levelDone];
-    }];
-    
-    CCSequence *seq = [CCSequence actions:hide,delay,callParent, nil];
-    [self runAction:seq];
+//    CCCallBlock *hide = [CCCallBlock actionWithBlock:^{
+//        [self hideWithDuration:2.0f];
+//    }];
+//    CCDelayTime *delay = [CCDelayTime actionWithDuration:2.05f];
+//    CCCallBlock *callParent = [CCCallBlock actionWithBlock:^{
+//        [(CardMatching*)self.parent.parent levelDone];
+//    }];
+//    
+//    CCSequence *seq = [CCSequence actions:hide,delay,callParent, nil];
+//    [self runAction:seq];
 }
 
 - (void) gameDone
@@ -471,7 +479,7 @@
     CGPoint location = [touch locationInView:[touch view]];
 	location = [[CCDirector sharedDirector] convertToGL:location];
     
-    Card *_card = [self cardByTouched:location];
+    PGRenderCard *_card = [self cardByTouched:location];
     if (_card)
     {
         if (!_card.isShow)
@@ -503,7 +511,7 @@
             [self setTouchEnabled:NO];
             CCDelayTime *delay = [CCDelayTime actionWithDuration:cardFlipDuration+0.1f];
             CCCallBlock *compare = [CCCallBlock actionWithBlock:^{
-                if ([firstCard isMatchWithCard:secondCard])
+                if ([firstCard isMatchWithCard:secondCard ignoreSelf:YES])
                 {
                     firstCard.visible = NO;
                     secondCard.visible = NO;
@@ -572,16 +580,16 @@
     
 }
 
-- (Card*) cardByTouched:(CGPoint)touch
+- (PGRenderCard*) cardByTouched:(CGPoint)touch
 {
-    Card *card = nil;
+    PGRenderCard *card = nil;
     if (CGRectContainsPoint(cardPanel.boundingBox, touch))
     {
         NSUInteger i = 0;
         NSUInteger cardsCount = [cards count];
         while (i < cardsCount)
         {
-            Card *tempCard = [cards objectAtIndex:i++];
+            PGRenderCard *tempCard = [cards objectAtIndex:i++];
             if (tempCard.visible && CGRectContainsPoint(tempCard.boundingBox, ccpSub(touch, cardPanel.boundingBox.origin)))
             {
                 card = tempCard;

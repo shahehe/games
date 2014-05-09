@@ -44,11 +44,11 @@
     config.fontName = @"Gill Sans";
     config.fontSize = 24 * CC_CONTENT_SCALE_FACTOR();
     
-    config.imagePosition = ccp(0.5, 0.65);
-    config.labelPosition = ccp(0.5, 0.25);
+    config.imagePosition = ccp(0.5, 0.25);
+    config.labelPosition = ccp(0.5, 0.65);
     
-    config.cardBackImageFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"cardBack.png"];
-    config.cardFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"card.png"];
+    config.cardBackImageFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"backCard.png"];
+    config.cardFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"backCard.png"];
     
     config.cardImageFileName = [word stringByAppendingPathExtension:@"png"];
     
@@ -78,19 +78,23 @@
     
     CCSprite *card = [CCSprite spriteWithSpriteFrame:c.cardFrame];
     CGPoint p_card = ccpFromSize(card.boundingBox.size);
+    card.position = ccpMult(p_card, 0.5);
+    card.flipY = YES;
     
     CGFloat fontSize = c.fontSize - self.word.length * CC_CONTENT_SCALE_FACTOR();
     CCLabelTTF *label = [CCLabelTTF labelWithString:word fontName:c.fontName fontSize:fontSize];
     label.position = ccpCompMult(p_card, c.labelPosition);
+    label.flipY = YES;
     
     CCSprite *image = [CCSprite spriteWithFile:c.cardImageFileName];
     image.position = ccpCompMult(p_card, c.imagePosition);
+    image.flipY = YES;
     
     CCRenderTexture *tex = [CCRenderTexture renderTextureWithWidth:p_card.x height:p_card.y];
     [tex begin];
-    [card draw];
-    [label draw];
-    [image draw];
+    [card visit];
+    [image visit];
+    [label visit];
     [tex end];
     
     [[tex sprite] setBlendFunc:(ccBlendFunc){GL_ONE,GL_ONE_MINUS_SRC_ALPHA}];
@@ -103,11 +107,11 @@
 
 - (void) dealloc
 {
-    [super dealloc];
-    
     [_word release];
     [_cardBackFrame release];
     [_cardFrame release];
+    
+    [super dealloc];
 }
 
 - (void) showFromDirection:(CardFlipDirection)_direction withDuration:(ccTime)_duration
