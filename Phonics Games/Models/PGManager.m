@@ -10,6 +10,12 @@
 
 #import "UtilsMacro.h"
 
+@interface PGManager ()
+//private
+@property(nonatomic,retain) NSArray *wordLists;
+
+@end
+
 @implementation PGManager
 
 + (instancetype) sharedManager
@@ -28,6 +34,9 @@
     self = [super init];
     NSAssert(self, @"Game Manager failed launch");
     
+    NSString *wordListPath = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"cardMatchWordList.plist"];
+    self.wordLists = [NSArray arrayWithContentsOfFile:wordListPath];
+    
     // letter A active default
     NSDictionary *gameStatus = @{@"LearnWord" :[NSNumber numberWithBool:NO],
                                  @"SearchWord":[NSNumber numberWithBool:NO],
@@ -39,10 +48,20 @@
     return self;
 }
 
+- (void) dealloc
+{
+    [_wordLists release];
+    
+    [super dealloc];
+}
+
 // 因为现在单词列表中好多字母没有单词，先采取此下策。
 - (NSArray*) wordsForLetter:(char)letter
 {
-    return @[@"bear",@"bird",@"boat",@"bus"];
+    NSUInteger idx = letter - 'A' > 0 ? letter - 'A' : letter - 'a';
+    NSArray *words = [self.wordLists objectAtIndex:idx];
+    
+    return words.count > 0 ? words :@[@"bear",@"bird",@"boat",@"bus"];
 }
 
 - (BOOL) isActiveForLetter:(char)letter

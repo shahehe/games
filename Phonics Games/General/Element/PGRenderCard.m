@@ -48,7 +48,7 @@
     config.labelPosition = ccp(0.5, 0.65);
     
     config.cardBackImageFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"backCard.png"];
-    config.cardFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"backCard.png"];
+    config.cardFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"cardBack.png"];
     
     config.cardImageFileName = [word stringByAppendingPathExtension:@"png"];
     
@@ -69,6 +69,12 @@
     PGRenderCardConfig *c = config;
     if (!c)
     {
+        CCTexture2D *tex =
+        [[CCTextureCache sharedTextureCache] addImage:@"card_back.png"];
+        CGRect rect = CGRectZero;
+        rect.size = tex.contentSize;
+        CCSpriteFrame *f = [CCSpriteFrame frameWithTexture:tex rect:rect];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFrame:f name:@"cardBack.png"];
         c = [PGRenderCard defaultConfigForWord:word];
     }
     
@@ -89,6 +95,10 @@
     CCSprite *image = [CCSprite spriteWithFile:c.cardImageFileName];
     image.position = ccpCompMult(p_card, c.imagePosition);
     image.flipY = YES;
+    
+    // for test
+    label.scale = 0.6;
+    image.scale = 0.6;
     
     CCRenderTexture *tex = [CCRenderTexture renderTextureWithWidth:p_card.x height:p_card.y];
     [tex begin];

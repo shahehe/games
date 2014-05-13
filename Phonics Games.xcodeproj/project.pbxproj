@@ -378,6 +378,7 @@
 		84B845C218F31DA600A9DA12 /* starSmash.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B845B518F31DA600A9DA12 /* starSmash.plist */; };
 		84B845C318F31DA600A9DA12 /* starSmash.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B845B618F31DA600A9DA12 /* starSmash.png */; };
 		84B845C618F31E0200A9DA12 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B845C418F31E0200A9DA12 /* Button.m */; };
+		84C4E0A819223E380054D339 /* card_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C4E0A719223E380054D339 /* card_back.png */; };
 		84DBB53C18EAD19A00E7F8C7 /* Arial-Black-ipad.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 84DBB53818EAD19A00E7F8C7 /* Arial-Black-ipad.fnt */; };
 		84DBB53D18EAD19A00E7F8C7 /* Arial-Black-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DBB53918EAD19A00E7F8C7 /* Arial-Black-ipad.png */; };
 		84DBB53E18EAD19A00E7F8C7 /* Arial-Black-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 84DBB53A18EAD19A00E7F8C7 /* Arial-Black-ipadhd.fnt */; };
@@ -990,6 +991,7 @@
 		84B845B618F31DA600A9DA12 /* starSmash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starSmash.png; sourceTree = "<group>"; };
 		84B845C418F31E0200A9DA12 /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
 		84B845C518F31E0200A9DA12 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
+		84C4E0A719223E380054D339 /* card_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_back.png; sourceTree = "<group>"; };
 		84DBB53618E9C0E400E7F8C7 /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 		84DBB53818EAD19A00E7F8C7 /* Arial-Black-ipad.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Arial-Black-ipad.fnt"; sourceTree = "<group>"; };
 		84DBB53918EAD19A00E7F8C7 /* Arial-Black-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arial-Black-ipad.png"; sourceTree = "<group>"; };
@@ -1707,6 +1709,7 @@
 		84B8456818F31CED00A9DA12 /* art work */ = {
 			isa = PBXGroup;
 			children = (
+				84C4E0A719223E380054D339 /* card_back.png */,
 				84ACDCD9191A97B00054AB12 /* images */,
 				84B8456918F31CED00A9DA12 /* cardMatching-ipad.plist */,
 				84B8456A18F31CED00A9DA12 /* cardMatching-ipad.png */,
@@ -2646,6 +2649,7 @@
 				84B845C218F31DA600A9DA12 /* starSmash.plist in Resources */,
 				84ACDD87191A97B00054AB12 /* jump-ipadhd.png in Resources */,
 				84B5422218F3DB9A001EEDBD /* bubble-ipadhd.png in Resources */,
+				84C4E0A819223E380054D339 /* card_back.png in Resources */,
 				84B5420D18F3DB9A001EEDBD /* bubble_texture-ipadhd.plist in Resources */,
 				84B5421218F3DB9A001EEDBD /* game_bg-ipadhd.png in Resources */,
 				84ACDDBF191A97B00054AB12 /* star-ipadhd.png in Resources */,
