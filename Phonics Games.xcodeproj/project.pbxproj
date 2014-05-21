@@ -378,7 +378,10 @@
 		84B845C218F31DA600A9DA12 /* starSmash.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84B845B518F31DA600A9DA12 /* starSmash.plist */; };
 		84B845C318F31DA600A9DA12 /* starSmash.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B845B618F31DA600A9DA12 /* starSmash.png */; };
 		84B845C618F31E0200A9DA12 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B845C418F31E0200A9DA12 /* Button.m */; };
-		84C4E0A819223E380054D339 /* card_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C4E0A719223E380054D339 /* card_back.png */; };
+		84BC3502192CA27A00A50BD7 /* RenderCard_backCard-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BC34FE192CA27A00A50BD7 /* RenderCard_backCard-ipad.png */; };
+		84BC3503192CA27A00A50BD7 /* RenderCard_backCard-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BC34FF192CA27A00A50BD7 /* RenderCard_backCard-ipadhd.png */; };
+		84BC3504192CA27A00A50BD7 /* RenderCard_cardBack-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BC3500192CA27A00A50BD7 /* RenderCard_cardBack-ipad.png */; };
+		84BC3505192CA27A00A50BD7 /* RenderCard_cardBack-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BC3501192CA27A00A50BD7 /* RenderCard_cardBack-ipadhd.png */; };
 		84DBB53C18EAD19A00E7F8C7 /* Arial-Black-ipad.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 84DBB53818EAD19A00E7F8C7 /* Arial-Black-ipad.fnt */; };
 		84DBB53D18EAD19A00E7F8C7 /* Arial-Black-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DBB53918EAD19A00E7F8C7 /* Arial-Black-ipad.png */; };
 		84DBB53E18EAD19A00E7F8C7 /* Arial-Black-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 84DBB53A18EAD19A00E7F8C7 /* Arial-Black-ipadhd.fnt */; };
@@ -991,7 +994,10 @@
 		84B845B618F31DA600A9DA12 /* starSmash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = starSmash.png; sourceTree = "<group>"; };
 		84B845C418F31E0200A9DA12 /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
 		84B845C518F31E0200A9DA12 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
-		84C4E0A719223E380054D339 /* card_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_back.png; sourceTree = "<group>"; };
+		84BC34FE192CA27A00A50BD7 /* RenderCard_backCard-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RenderCard_backCard-ipad.png"; sourceTree = "<group>"; };
+		84BC34FF192CA27A00A50BD7 /* RenderCard_backCard-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RenderCard_backCard-ipadhd.png"; sourceTree = "<group>"; };
+		84BC3500192CA27A00A50BD7 /* RenderCard_cardBack-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RenderCard_cardBack-ipad.png"; sourceTree = "<group>"; };
+		84BC3501192CA27A00A50BD7 /* RenderCard_cardBack-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RenderCard_cardBack-ipadhd.png"; sourceTree = "<group>"; };
 		84DBB53618E9C0E400E7F8C7 /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 		84DBB53818EAD19A00E7F8C7 /* Arial-Black-ipad.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Arial-Black-ipad.fnt"; sourceTree = "<group>"; };
 		84DBB53918EAD19A00E7F8C7 /* Arial-Black-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arial-Black-ipad.png"; sourceTree = "<group>"; };
@@ -1709,7 +1715,10 @@
 		84B8456818F31CED00A9DA12 /* art work */ = {
 			isa = PBXGroup;
 			children = (
-				84C4E0A719223E380054D339 /* card_back.png */,
+				84BC34FE192CA27A00A50BD7 /* RenderCard_backCard-ipad.png */,
+				84BC34FF192CA27A00A50BD7 /* RenderCard_backCard-ipadhd.png */,
+				84BC3500192CA27A00A50BD7 /* RenderCard_cardBack-ipad.png */,
+				84BC3501192CA27A00A50BD7 /* RenderCard_cardBack-ipadhd.png */,
 				84ACDCD9191A97B00054AB12 /* images */,
 				84B8456918F31CED00A9DA12 /* cardMatching-ipad.plist */,
 				84B8456A18F31CED00A9DA12 /* cardMatching-ipad.png */,
@@ -2649,7 +2658,6 @@
 				84B845C218F31DA600A9DA12 /* starSmash.plist in Resources */,
 				84ACDD87191A97B00054AB12 /* jump-ipadhd.png in Resources */,
 				84B5422218F3DB9A001EEDBD /* bubble-ipadhd.png in Resources */,
-				84C4E0A819223E380054D339 /* card_back.png in Resources */,
 				84B5420D18F3DB9A001EEDBD /* bubble_texture-ipadhd.plist in Resources */,
 				84B5421218F3DB9A001EEDBD /* game_bg-ipadhd.png in Resources */,
 				84ACDDBF191A97B00054AB12 /* star-ipadhd.png in Resources */,
@@ -2801,6 +2809,7 @@
 				84E9D9A618EFE73500EEAA91 /* cap.caf in Resources */,
 				84E9D9AB18EFE73500EEAA91 /* gam.caf in Resources */,
 				84B3BF0518F9684D00DE06A7 /* GillSansMT.png in Resources */,
+				84BC3503192CA27A00A50BD7 /* RenderCard_backCard-ipadhd.png in Resources */,
 				84B5635618F1999700A9B99B /* DENNE-SKETCHY.ttf in Resources */,
 				84ACDD60191A97B00054AB12 /* cow-ipad.png in Resources */,
 				84B5420318F3DB9A001EEDBD /* Lithos_pro_yellow-ipad.fnt in Resources */,
@@ -2916,6 +2925,7 @@
 				84ACDD62191A97B00054AB12 /* deer-ipad.png in Resources */,
 				84E9D9BA18EFE73500EEAA91 /* nag.caf in Resources */,
 				84ACDDD2191B65F00054AB12 /* menu_letter_list-ipadhd.plist in Resources */,
+				84BC3502192CA27A00A50BD7 /* RenderCard_backCard-ipad.png in Resources */,
 				84B7A6B5191D2FDE0008899B /* wheel.caf in Resources */,
 				84B7A664191D2FDE0008899B /* donkey.caf in Resources */,
 				84ACDDC2191A97B00054AB12 /* zigzag-ipad.png in Resources */,
@@ -2927,6 +2937,7 @@
 				84B7A679191D2FDE0008899B /* hog.caf in Resources */,
 				84E9D9B218EFE73500EEAA91 /* jam.caf in Resources */,
 				84B7A6B4191D2FDE0008899B /* water.caf in Resources */,
+				84BC3504192CA27A00A50BD7 /* RenderCard_cardBack-ipad.png in Resources */,
 				84ACDD61191A97B00054AB12 /* cow-ipadhd.png in Resources */,
 				84ACDDA0191A97B00054AB12 /* owl-ipad.png in Resources */,
 				84ACDD82191A97B00054AB12 /* jacket-ipad.png in Resources */,
@@ -2958,6 +2969,7 @@
 				84B845BA18F31DA600A9DA12 /* select1.caf in Resources */,
 				84ACDDC0191A97B00054AB12 /* sun-ipad.png in Resources */,
 				84E9D9A518EFE73500EEAA91 /* cam.caf in Resources */,
+				84BC3505192CA27A00A50BD7 /* RenderCard_cardBack-ipadhd.png in Resources */,
 				84B8459918F31CED00A9DA12 /* CMsige-ipad.png in Resources */,
 				84B7A690191D2FDE0008899B /* nail.caf in Resources */,
 				84ACDD5C191A97B00054AB12 /* cap-ipad.png in Resources */,

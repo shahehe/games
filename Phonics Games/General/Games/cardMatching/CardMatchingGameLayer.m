@@ -352,9 +352,9 @@
 {
     [[SimpleAudioEngine sharedEngine] playEffect:@"applause.caf"];
     
-    CGSize size = [[CCDirector sharedDirector] winSize];
-    CGFloat width = size.width;
-    CGFloat height = size.height;
+//    CGSize size = [[CCDirector sharedDirector] winSize];
+//    CGFloat width = size.width;
+//    CGFloat height = size.height;
     
     //score
     _totalScore += _score;
@@ -362,11 +362,11 @@
     _totalScore += _time * (20);
     
     // firework
-    CCParticleSystem* firework = [CCParticleSystemQuad particleWithFile:@"firework.plist"];
-    firework.positionType = kCCPositionTypeFree;
-    firework.autoRemoveOnFinish = YES;
-    firework.position = ccp(width*0.5f, height*0.75f);
-    [self addChild:firework];
+//    CCParticleSystem* firework = [CCParticleSystemQuad particleWithFile:@"firework.plist"];
+//    firework.positionType = kCCPositionTypeFree;
+//    firework.autoRemoveOnFinish = YES;
+//    firework.position = ccp(width*0.5f, height*0.75f);
+//    [self addChild:firework];
     
 //    _currentLevel++;
 //    switch (_currentLevel) {
@@ -423,7 +423,7 @@
 - (void) gameDone
 {
     line = 2;
-    row = 3;
+    row = 4;
     _currentLevel = 1;
     
     CCCallBlock *hide = [CCCallBlock actionWithBlock:^{
@@ -521,18 +521,18 @@
                     numberOfShowCars++;
                     numberOfRemainCards = numberOfRemainCards - 2;
                     
-                    //particle
-                    CCParticleSystem* cardSmash = [CCParticleSystemQuad particleWithFile:@"star.plist"];
-                    cardSmash.positionType = kCCPositionTypeFree;
-                    cardSmash.autoRemoveOnFinish = YES;
-                    cardSmash.position = firstCard.position;
-                    [cardPanel addChild:cardSmash];
-                    
-                    CCParticleSystem* cardDisappear = [CCParticleSystemQuad particleWithFile:@"star.plist"];
-                    cardDisappear.positionType = kCCPositionTypeFree;
-                    cardDisappear.autoRemoveOnFinish = YES;
-                    cardDisappear.position = secondCard.position;
-                    [cardPanel addChild:cardDisappear];
+//                    //particle
+//                    CCParticleSystem* cardSmash = [CCParticleSystemQuad particleWithFile:@"star.plist"];
+//                    cardSmash.positionType = kCCPositionTypeFree;
+//                    cardSmash.autoRemoveOnFinish = YES;
+//                    cardSmash.position = firstCard.position;
+//                    [cardPanel addChild:cardSmash];
+//                    
+//                    CCParticleSystem* cardDisappear = [CCParticleSystemQuad particleWithFile:@"star.plist"];
+//                    cardDisappear.positionType = kCCPositionTypeFree;
+//                    cardDisappear.autoRemoveOnFinish = YES;
+//                    cardDisappear.position = secondCard.position;
+//                    [cardPanel addChild:cardDisappear];
                     
                     _score += scoreRate;
                     scoreRate += 100;

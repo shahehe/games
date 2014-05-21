@@ -44,11 +44,11 @@
     config.fontName = @"Gill Sans";
     config.fontSize = 24 * CC_CONTENT_SCALE_FACTOR();
     
-    config.imagePosition = ccp(0.5, 0.25);
-    config.labelPosition = ccp(0.5, 0.65);
+    config.imagePosition = ccp(0.5, 0.38);
+    config.labelPosition = ccp(0.5, 0.75);
     
-    config.cardBackImageFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"backCard.png"];
-    config.cardFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"cardBack.png"];
+    config.cardBackImageFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"RenderCard_backCard.png"];
+    config.cardFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"RenderCard_cardBack.png"];
     
     config.cardImageFileName = [word stringByAppendingPathExtension:@"png"];
     
@@ -69,12 +69,26 @@
     PGRenderCardConfig *c = config;
     if (!c)
     {
-        CCTexture2D *tex =
-        [[CCTextureCache sharedTextureCache] addImage:@"card_back.png"];
-        CGRect rect = CGRectZero;
-        rect.size = tex.contentSize;
-        CCSpriteFrame *f = [CCSpriteFrame frameWithTexture:tex rect:rect];
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFrame:f name:@"cardBack.png"];
+        if (![[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"RenderCard_backCard.png"])
+        {
+            CCTexture2D *tex =
+            [[CCTextureCache sharedTextureCache] addImage:@"RenderCard_backCard.png"];
+            CGRect rect = CGRectZero;
+            rect.size = tex.contentSize;
+            CCSpriteFrame *f = [CCSpriteFrame frameWithTexture:tex rect:rect];
+            [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFrame:f name:@"RenderCard_backCard.png"];
+        }
+        
+        if (![[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"RenderCard_cardBack.png"])
+        {
+            CCTexture2D *tex =
+            [[CCTextureCache sharedTextureCache] addImage:@"RenderCard_cardBack.png"];
+            CGRect rect = CGRectZero;
+            rect.size = tex.contentSize;
+            CCSpriteFrame *f = [CCSpriteFrame frameWithTexture:tex rect:rect];
+            [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFrame:f name:@"RenderCard_cardBack.png"];
+        }
+        
         c = [PGRenderCard defaultConfigForWord:word];
     }
     
@@ -90,6 +104,7 @@
     CGFloat fontSize = c.fontSize - self.word.length * CC_CONTENT_SCALE_FACTOR();
     CCLabelTTF *label = [CCLabelTTF labelWithString:word fontName:c.fontName fontSize:fontSize];
     label.position = ccpCompMult(p_card, c.labelPosition);
+    label.color = ccBLACK;
     label.flipY = YES;
     
     CCSprite *image = [CCSprite spriteWithFile:c.cardImageFileName];
@@ -97,8 +112,8 @@
     image.flipY = YES;
     
     // for test
-    label.scale = 0.6;
-    image.scale = 0.6;
+//    label.scale = 0.65;
+//    image.scale = 0.65;
     
     CCRenderTexture *tex = [CCRenderTexture renderTextureWithWidth:p_card.x height:p_card.y];
     [tex begin];
@@ -112,7 +127,15 @@
     
     _isShow = NO;
     
+    self.scale = 0.68;
+    
     return self;
+}
+
+- (void) setScale:(float)scale
+{
+    _scaleX = 0.68;
+    _scaleY = 0.68;
 }
 
 - (void) dealloc
